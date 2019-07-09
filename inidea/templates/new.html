@@ -1,9 +1,22 @@
 <h1>New</h1>
 <a href="{%url 'homepage'%}">home</a>
-<form action="{%url 'create'%}">
-    <h1>제목:</h1>
-    <input type="text" name="title"><br><!--변수를 파이썬으로-->
-    <h1>본문:</h1>
-    <textarea name="body" cols="40" rows="10"></textarea><br>
-    <input type="submit" value="제출하기">
-</form>
+<div class="container">
+    <form action="{% url 'create'%}">
+        <h4>가게이름 : </h4>
+        <input type ="text" name="title">
+        <br>
+        <br>
+        <h4>소개 : </h4>
+        <textarea cols=40 rows=10 name="body"></textarea>
+        <br>
+        <br>
+        <h4>매장사진 : </h4>
+        <br>
+        <br>
+        <h4>메뉴 : </h4>
+        <br>
+        <br>
+        <h4>위치 : </h4>
+        <input class="btn btn-dark" type="submit" value="제출하기">
+    </form>
+</div>

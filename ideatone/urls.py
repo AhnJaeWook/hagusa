@@ -27,4 +27,8 @@ urlpatterns = [
     path('login/',inidea.views.login, name="login"),
     path('logout/',inidea.views.logout, name="logout"),
     path('signup/', inidea.views.signup, name = "signup"),
+    path('inhome/', inidea.views.inhome, name="inhome"),
+    path('inhome/new/',inidea.views.new, name="new"),
+    path('inhome/create',inidea.views.create, name = "create"),
+    path('inhome/<int:blog_id>',inidea.views.detail, name="detail"),
 ]
