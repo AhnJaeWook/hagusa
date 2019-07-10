@@ -53,3 +53,20 @@ def create(request):
 def detail(request, blog_id):
     details=get_object_or_404(Blog,pk=blog_id)
     return render(request, 'detail.html',{'details':details})
+
+def delete(request, blog_id):
+    get_object_or_404(Blog, pk=blog_id).delete()
+
+    return redirect('/')
+
+def edit(request, blog_id):
+    blog= get_object_or_404(Blog,pk=blog_id)
+    return render(request, 'edit.html', {'blog':blog})
+
+def update(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    blog.title = request.GET['title']
+    blog.body = request.GET['body']
+    blog.save()
+
+    return redirect('/detail/' + str(blog_id))

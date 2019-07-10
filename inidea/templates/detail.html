@@ -1,6 +1,9 @@
-<h1> 자세한 내용을 알려주는 페이지 </h1>
-    <h2>{{details.title}}</h2>
-    <p>{{details.pub_date}}</p>
-    <p>{{details.summary}}</p>
-        
-</div>
+<h1> 세부 내용 </h1>
+
+<h2>{{details.title}}</h2>
+<p>{{details.pub_date}}</p>
+<p>{{details.summary}}</p> 
+
+<a href="{% url 'inhome' %}">HOME</a>
+<a href="{% url 'delete' detail.id %}">삭제하기</a>
+<a href="{% url 'edit' detail.id %}">수정하기</a>
