@@ -8,13 +8,30 @@
 <head>
 <style type="text/css">
 #search {
-    left: 300px;
+  position : absolute;
+  top: 50px;
+  left: 600px;
 }
 #inner {
-    width: 200px;
-    height: 100px;
-    left : 200px;
-    top : 200px;
+  width: 200px;
+  height: 100px;
+  left : 200px;
+  top : 200px;
+  float:left;
+}
+#inner1 {
+  width: 200px;
+  height: 100px;
+  right : 200px;
+  top : 200px;
+  float:right;
+}
+#inner2 {
+  width: 200px;
+  height: 100px;
+  left : 325px;
+  top : 200px;
+  float:center;
 }
 </style>
 </head>
@@ -22,12 +39,28 @@
 <div class="container"> <!--컨테이너-->
   <!-- Content here -->
 </div>
-<form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<form id="search" class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
 <br><br>
 <div id="inner" class="card" style="width: 18rem; height: 18rem;">            <!--카드한개-->
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">제목</h5>
+    <p class="card-text">간단한 내용</p>
+    <a href="#" class="btn btn-primary">자세한 내용</a>
+  </div>
+</div>
+<div id="inner1" class="card" style="width: 18rem; height: 18rem;">            <!--카드한개-->
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">제목</h5>
+    <p class="card-text">간단한 내용</p>
+    <a href="#" class="btn btn-primary">자세한 내용</a>
+  </div>
+</div>
+<div id="inner2" class="card" style="width: 18rem; height: 18rem;">            <!--카드한개-->
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">제목</h5>

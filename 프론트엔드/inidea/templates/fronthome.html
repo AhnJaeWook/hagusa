@@ -17,6 +17,20 @@ h2.absolute {
     left : 500px;
     top : 250px;
 }
+#login {
+    position : absolute;
+    color: black;
+    font-size: 200%;
+    left : 780px;
+    top : 305px;
+}
+#signup {
+    position : absolute;
+    color: black;
+    font-size: 200%;
+    left : 700px;
+    top : 305px;
+}
 </style>
 </head>
 
@@ -24,3 +38,9 @@ h2.absolute {
     <h1 class="absolute">ID: <input type="text" name="username"> </h1>
     <h2 class="absolute">PASSWORD: <input type="password" name="password"> </h2>
 </body>
+<form id="login" method="POST" action="{%url '#'%}">
+    <input type="submit" value="login">
+</form>
+<form id="signup" method="POST" action="{%url '#'%}">
+    <input type="submit" value="회원가입">
+</form>
