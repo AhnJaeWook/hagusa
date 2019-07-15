@@ -24,16 +24,14 @@ from django.conf.urls.static import static#url들을 가져와라
 urlpatterns = [
     path('', inidea.views.homepage, name = "homepage"),
     path('admin/', admin.site.urls),
-    path('login/',inidea.views.login, name="login"),
+    path('login/',inidea.views.fronthome, name="login"),
     path('logout/',inidea.views.logout, name="logout"),
     path('signup/', inidea.views.signup, name = "signup"),
-    path('inhome/', inidea.views.inhome, name="inhome"),
-    path('inhome/new/',inidea.views.frontnew, name="new"),
+    path('infronthome/frontnew/',inidea.views.frontnew, name="new"),
     path('inhome/create',inidea.views.create, name = "create"),
     path('detail/<int:blog_id>/',inidea.views.frontdetail, name="detail"),
     path('delete/<int:blog_id>/',inidea.views.delete, name="delete"),
     path('edit/<int:blog_id>/', inidea.views.edit, name="edit"),
     path('update/<int:blog_id>/', inidea.views.update, name="update"),
-    path('fronthome/', inidea.views.fronthome, name="fronthome"),
     path('infronthome/', inidea.views.infronthome, name="infronthome"),
 ]
