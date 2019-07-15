@@ -15,23 +15,28 @@
 #inner {
   width: 200px;
   height: 100px;
-  left : 200px;
+  left : 100px;
   top : 200px;
   float:left;
 }
 #inner1 {
   width: 200px;
   height: 100px;
-  right : 200px;
+  left : 200px;
   top : 200px;
-  float:right;
+  float:left;
 }
 #inner2 {
   width: 200px;
   height: 100px;
-  left : 325px;
+  left : 300px;
   top : 200px;
   float:center;
+}
+#logout1 {
+  margin-top:10px;
+  margin-right:10px;
+  float:right;
 }
 </style>
 </head>
@@ -39,6 +44,11 @@
 <div class="container"> <!--컨테이너-->
   <!-- Content here -->
 </div>
+<a href="frontnew">새로운 글</a>
+<a id="logout1" href="javascript:{document.getElementById('logout').submit()}">logout</a>        <!--로그아웃-->
+<form id='logout' method="POST" action="{%url 'logout'%}">
+    {%csrf_token%}<input type="hidden"/>
+</form>
 <form id="search" class="form-inline my-2 my-lg-0">
   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
