@@ -38,9 +38,11 @@ h2.absolute {
     <h1 class="absolute">ID: <input type="text" name="username"> </h1>
     <h2 class="absolute">PASSWORD: <input type="password" name="password"> </h2>
 </body>
-<form id="login" method="POST" action="{%url '#'%}">
+<form id="login" method="POST" action="{%url 'infronthome'%}">
+    {%csrf_token%}
     <input type="submit" value="login">
 </form>
-<form id="signup" method="POST" action="{%url '#'%}">
+<form id="signup" method="POST" action="{%url 'signup'%}">
+    {%csrf_token%}
     <input type="submit" value="회원가입">
 </form>
