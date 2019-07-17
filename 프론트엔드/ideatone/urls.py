@@ -22,7 +22,8 @@ from django.conf import settings#내 세팅을 가져와라
 from django.conf.urls.static import static#url들을 가져와라
 
 urlpatterns = [
-    path('', inidea.views.home, name = "homepage"),
+    path('', inidea.views.main, name="main"),
+    #path('', inidea.views.home, name = "homepage"),
     path('admin/', admin.site.urls),
     path('login/',inidea.views.login, name="login"),
     path('logout/',inidea.views.logout, name="logout"),
