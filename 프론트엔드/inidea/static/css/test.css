@@ -1,3 +1,4 @@
+
 #s_left{
     width: 20%;
     height: 700px;
@@ -18,3 +19,119 @@
     background-color: red;
     float:left;
 }
+
+#m1 {
+    color: orange;
+}
+
+#m2{
+    margin:auto;
+    width:800px;
+    margin-top: 5%;
+    background-color: black;
+}
+
+#main_title{
+    width: 100%;
+    height: 100px;
+    background-color: #82FA58;
+}
+#bulletin{
+    width:100%;
+    height : 100px;
+    background-color:white;
+}
+.item{
+    width : 0px;
+    height : 0px;
+    margin-left : 0px;
+    color : white;
+    text-align:center;
+    font-size : 14px;
+    line-height: 50px;
+}
+
+#main_CT{
+    width:20%;
+    height:500px;
+    float:left;
+    background-color:skyblue;
+    text-align:left;
+}
+
+#main_search{
+    width:100%;
+    height : 100px;
+    float: left;
+    text-align:center;
+    background-color: blue;
+}
+
+#main_J{
+    width:80%;
+    height:500px;
+    float: left;
+    text-align:center;
+    background-color:gray;
+}
+
+#m6{
+    width:100%;
+    height:100px;
+    clear:both;
+    background-color:#C8FE2E;
+    text-align:center;
+}
+
+#letter_center{
+width:100%;
+height : 100px;
+float: left;
+text-align:center;
+}
+#bulletin_detail{
+width:80%;
+height : 400px;
+float: left;
+text-align:center;
+background-color:salmon;
+}
+#bulletin_select{
+width:20%;
+height : 100px;
+float: left;
+text-align:center;
+}
+#bulletin_select_detail_introduce{
+width: 20%;
+height : 100px;
+float: center;
+text-align:center;
+background-color:hotpink;
+}
+#bulletin_select_detail_menu{
+width: 20%;
+height : 100px;
+float: center;
+text-align:center;
+background-color:blue;
+}
+#bulletin_select_detail_map{
+width: 20%;
+height : 100px;
+float: center;
+text-align:center;
+background-color:peru;
+}
+#bulletin_select_detail_comment{
+width: 20%;
+height : 100px;
+float: center;
+text-align:center;
+background-color:navajowhite;
+}
+.main_title_font{font-size:80px;color:black;}
+.P1{font-size:50px;color:#BCF5A9;}
+.P2{font-size:80px;color:skyblue;}
+.M1{font-size:16px;color:#82FA58;}
+>>>>>>> c00af22aee70d73ecfac9b400b517f9b4c17da18

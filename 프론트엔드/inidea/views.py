@@ -79,3 +79,18 @@ def infronthome(request):
 
 def fronthome(request):
     return render(request, "fronthome.html")
+
+def bulletin(request):
+    return render(request, "bulletin.html")
+
+def bulletinMenu(request):
+    return render(request, "bulletin_menu.html")
+
+def bulletinIntro(request):
+    return render(request, "bulletin_introduce.html")
+
+def bulletinMap(request):
+    return render(request, "bulletin_map.html")
+
+def bulletinComment(request):
+    return render(request, "bulletin_comment.html")

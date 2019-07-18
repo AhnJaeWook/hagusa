@@ -122,7 +122,7 @@ STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'blog', 'static')#이곳에 파일이 있어요
+    os.path.join(BASE_DIR, 'inidea', 'static')#이곳에 파일이 있어요
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')#파일을 여기로 모아주세요
