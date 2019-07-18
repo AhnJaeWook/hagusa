@@ -1,14 +1,19 @@
 {% load static %}
 <html>
     <head>
-        <link href="{% static 'css/test.css' %}" rel = "stylesheet">
+        <link href = "{% static 'css/test.css' %}" rel = "stylesheet">
     </head>
-    
     <body>
-        <div id="s_left">사이드바왼쪽(노랑)</div>
-        <div id="contents">본문(녹색)
-            <h1>메인입니다.</h1>
+        <div id=m2>
+            <div id="main_title">
+                <font class="main_title_font">title</font>
+                <a href="#" class="item">login</a>
+                <a href="#" class="item">signup</a>
+            </div>
+            <div id="main_search"><font class="P1">search</font></div>
+            <div id="main_CT">사이드메뉴</div>
+            <div id="main_J"><font class="P2">지도</font></div>
+            <div id="m6">빈공간</div>
         </div>
-        <div id="s_right">사이드바 오른쪽(빨강)</div>
-    </body>  
+    </body>
 </html>
