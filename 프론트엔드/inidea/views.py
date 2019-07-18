@@ -6,6 +6,9 @@ from django.contrib.auth.models import User#user만드는 함수들 가져와
 from django.contrib import auth
 
 # Create your views here.
+def main(request):
+    return render(request, 'main.html')
+
 def homepage(request):#blog 함수임
     blogs = Blog.objects.all()
     return render(request, 'homepage.html', {'blogs':blogs})
