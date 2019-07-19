@@ -6,7 +6,14 @@ from django.contrib.auth.models import User#user만드는 함수들 가져와
 from django.contrib import auth
 
 # Create your views here.
+<<<<<<< HEAD
 def home(request):#blog 함수임
+=======
+def main(request):
+    return render(request, 'main.html')
+
+def homepage(request):#blog 함수임
+>>>>>>> ed4d07310f06994adf226793614f0074ff3507f7
     blogs = Blog.objects.all()
     return render(request, 'home.html', {'blogs':blogs})
 
@@ -74,5 +81,25 @@ def update(request, blog_id):
 def infronthome(request):
     return render(request, "infronthome.html")
 
+<<<<<<< HEAD
 def main(request):
     return render(request, "main.html")
+=======
+def fronthome(request):
+    return render(request, "fronthome.html")
+
+def bulletin(request):
+    return render(request, "bulletin.html")
+
+def bulletinMenu(request):
+    return render(request, "bulletin_menu.html")
+
+def bulletinIntro(request):
+    return render(request, "bulletin_introduce.html")
+
+def bulletinMap(request):
+    return render(request, "bulletin_map.html")
+
+def bulletinComment(request):
+    return render(request, "bulletin_comment.html")
+>>>>>>> ed4d07310f06994adf226793614f0074ff3507f7
