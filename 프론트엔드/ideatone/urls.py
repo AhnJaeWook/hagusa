@@ -35,4 +35,9 @@ urlpatterns = [
     path('edit/<int:blog_id>/', inidea.views.edit, name="edit"),
     path('update/<int:blog_id>/', inidea.views.update, name="update"),
     path('infronthome/', inidea.views.infronthome, name="infronthome"),
+    path('bulletin/', inidea.views.bulletin, name="bulletin"),
+    path('bulletin/intro/', inidea.views.bulletinIntro, name="bulletinIntro"),
+    path('bulletin/menu/', inidea.views.bulletinMenu, name="bulletinMenu"),
+    path('bulletin/map/', inidea.views.bulletinMap, name="bulletinMap"),
+    path('bulletin/com/', inidea.views.bulletinComment, name="bulletinComment"),
 ]
