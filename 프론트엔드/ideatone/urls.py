@@ -22,19 +22,11 @@ from django.conf import settings#내 세팅을 가져와라
 from django.conf.urls.static import static#url들을 가져와라
 
 urlpatterns = [
-    #path('', inidea.views.homepage, name = "homepage"),
+    path('read/', inidea.views.read, name = "read"),
+    path('read1/', inidea.views.read1, name= "read1"),
+    path('admin/', admin.site.urls),
     path('', inidea.views.main, name="main"),
     path('admin/', admin.site.urls),
-    path('login/',inidea.views.fronthome, name="login"),
-    path('logout/',inidea.views.logout, name="logout"),
-    path('signup/', inidea.views.signup, name = "signup"),
-    path('infronthome/frontnew/',inidea.views.frontnew, name="new"),
-    path('inhome/create',inidea.views.create, name = "create"),
-    path('detail/<int:blog_id>/',inidea.views.frontdetail, name="detail"),
-    path('delete/<int:blog_id>/',inidea.views.delete, name="delete"),
-    path('edit/<int:blog_id>/', inidea.views.edit, name="edit"),
-    path('update/<int:blog_id>/', inidea.views.update, name="update"),
-    path('infronthome/', inidea.views.infronthome, name="infronthome"),
     path('bulletin/', inidea.views.bulletin, name="bulletin"),
     path('bulletin/intro/', inidea.views.bulletinIntro, name="bulletinIntro"),
     path('bulletin/menu/', inidea.views.bulletinMenu, name="bulletinMenu"),
