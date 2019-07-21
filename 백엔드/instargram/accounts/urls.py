@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib import admin
 
+import board.views
 app_name = "accounts"
 
 urlpatterns = [
