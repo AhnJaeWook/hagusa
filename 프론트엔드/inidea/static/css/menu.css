@@ -1,0 +1,88 @@
+body{
+	background:#ccc url(../images/wood.jpg) repeat top left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#444;
+	font-size:12px;
+	color: #000;
+}
+
+#m2{
+    margin:auto;
+    width:1100px;
+    height:800px;
+    /*position:relative;*/
+    background:transparent url(../images/rebon2.jpg) no-repeat 9px 27px;
+}
+
+#container {
+background-color: pink;
+flex-direction: column;
+flex-wrap:wrap;
+justify-content: space-around;
+display: flex;
+height: 800px;
+width: 1200px;
+}
+
+#name{
+border: 1px solid #cccccc;
+background-color: white;
+width:500px;
+margin: 20px;
+}
+
+#content {
+border: 1px solid #cccccc;
+background-color:rgba( 255, 255, 255, 0.5 );;
+width:1000px;
+height: 700px;
+}
+.item {
+
+margin: 20px;
+border-radius: 4px;
+background-color: yellow;
+height: 200px;
+width: 200px;
+display: inline-block;
+};
+
+#item2 {
+flex-direction: column;
+flex-wrap:wrap;
+border: 1px solid #cccccc;
+width:80%;
+height: 90%;
+
+}
+
+.image{
+display: inline-block;
+width: 25%;
+height: 25%;
+border: 1px solid blue;
+}
+
+#explain{
+display: inline-block;
+width: 55%;
+height: 28%;
+border: 1px solid blue;
+border-radius: 1px solid blue;
+
+}
+#image1{
+    display: inline-block;
+    width: 28%;
+    height: 38%;
+    border-radius: 10px;
+    background:transparent url(../images/americano.jpg) no-repeat;
+}
+
+#name2 {
+        
+    margin: 20px;
+    border: 1px solid #cccccc;
+    width:35%;
+    margin: 20px;
+}
