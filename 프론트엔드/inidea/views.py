@@ -32,3 +32,12 @@ def bulletinMap(request):
 
 def bulletinComment(request):
     return render(request, "bulletin_comment.html")
+
+def new(request):
+    return render(request, "new.html")
+
+def pr2(request):
+    return render(request, "pr2.html")
+
+def practice(request):
+    return render(request, "practice.html")

@@ -33,4 +33,7 @@ urlpatterns = [
     path('bulletin/menu/', inidea.views.bulletinMenu, name="bulletinMenu"),
     path('bulletin/map/', inidea.views.bulletinMap, name="bulletinMap"),
     path('bulletin/com/', inidea.views.bulletinComment, name="bulletinComment"),
+    path('new/',inidea.views.new, name="new"),
+    path('pr2/',inidea.views.pr2, name="pr2"),
+    path('practice/',inidea.views.practice, name="practice"),
 ]
