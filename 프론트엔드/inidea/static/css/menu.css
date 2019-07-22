@@ -1,5 +1,5 @@
 body{
-	background:#ccc url(../images/wood.jpg) repeat top left;
+	background:#ccc url(../images/완7.png) no-repeat;
 	font-family: Arial, Helvetica, sans-serif;
 	color:#444;
 	font-size:12px;
@@ -11,7 +11,7 @@ body{
     width:1100px;
     height:800px;
     /*position:relative;*/
-    background:transparent url(../images/rebon2.jpg) no-repeat 9px 27px;
+    background:transparent url(../images/완성3.jpg) no-repeat 9px 27px;
 }
 
 #container {
@@ -26,17 +26,19 @@ width: 1200px;
 
 #name{
     border-radius: 12px;
-    background:transparent url(../images/11.jpg) no-repeat;
+    /**/
+    background:transparent url(../images/액자.png) no-repeat;
+    font-size : 20px;
     width:500px;
     height:20px;
-
+    background-color: black;
 }
 
 #content {
 border: 1px solid #cccccc;
 background-color:rgba( 255, 255, 255, 0.5 );;
-width:1000px;
-height: 700px;
+width:800px;
+
 }
 .item {
 
@@ -64,8 +66,8 @@ width: 55%;
 height: 220px;
 border-radius: 1px solid blue;
 background-color: white;
-
 }
+
 #image1{
     display: inline-block;
     width: 250px;
