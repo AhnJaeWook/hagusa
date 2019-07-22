@@ -11,7 +11,7 @@ body{
     width:1100px;
     height:800px;
     /*position:relative;*/
-    background:transparent url(../images/rebon2.jpg) no-repeat 9px 27px;
+    background:transparent url(../images/bg.jpg) no-repeat 9px 27px;
 }
 
 #container {
@@ -25,11 +25,10 @@ width: 1200px;
 }
 
 #name{
-    border-radius: 12px;
-    background:transparent url(../images/11.jpg) no-repeat;
-    width:500px;
-    height:20px;
-
+border: 1px solid #cccccc;
+background-color: white;
+width:500px;
+margin: 20px;
 }
 
 #content {
@@ -57,23 +56,28 @@ height: 90%;
 
 }
 
+.image{
+display: inline-block;
+width: 25%;
+height: 25%;
+border: 1px solid blue;
+}
 
 #explain{
 display: inline-block;
 width: 55%;
-height: 220px;
+height: 28%;
+border: 1px solid blue;
 border-radius: 1px solid blue;
-background-color: white;
 
 }
 #image1{
     display: inline-block;
-    width: 250px;
-    height: 220px;
+    width: 38%;
+    height: 28%;
     border-radius: 12px;
-    background:transparent url(../images/1.jpg) no-repeat;
+    background:transparent url(../images/americano.png) no-repeat;
 }
-
 
 #name2 {
         
