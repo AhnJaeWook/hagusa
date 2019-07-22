@@ -44,6 +44,10 @@ INSTALLED_APPS = [
     'board.apps.BoardConfig',
     'frontend.apps.FrontendConfig',
     'el_pagination',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google', #제공
 ]
 
 MIDDLEWARE = [
@@ -129,10 +133,10 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/res/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = '/'
 
 DISQUS_WEBSITE_SHORTNAME = 'hagusa'
 SITE_ID = 1
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+LOGIN_REDIRECT_URL = '/main'
