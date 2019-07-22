@@ -15,9 +15,7 @@ def read1(request):
 def main(request):
     return render(request, "main.html")
 
-def love(request):
-    return render(request, "maumdaero.html")
-    
+  
 def bulletin(request):
     return render(request, "bulletin.html")
 

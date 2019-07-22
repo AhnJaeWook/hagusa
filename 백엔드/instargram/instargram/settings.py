@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ef)q8ne0%-@3e7$3om6jzb!cftegb2*d1-e9n2x0n1kpnbeuh#'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','0_ya7&c&5g1%&40l9@*-)%d=-b6@din%mfxsv3gia6$=yq9t%&')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,9 +44,14 @@ INSTALLED_APPS = [
     'board.apps.BoardConfig',
     'frontend.apps.FrontendConfig',
     'el_pagination',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google', #제공
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,13 +131,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend', 'static')#이곳에 파일이 있어요
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')#파일을 여기로 모아주세요
+
 MEDIA_URL = '/res/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = '/'
 
 DISQUS_WEBSITE_SHORTNAME = 'hagusa'
 SITE_ID = 1
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+LOGIN_REDIRECT_URL = '/main'
