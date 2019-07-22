@@ -35,4 +35,11 @@ urlpatterns = [
     path('new/',frontend.views.new, name="new"),
     path('pr2/',frontend.views.pr2, name="pr2"),
     path('pratice/',frontend.views.pratice, name="pratice"),
+    path('pagination/',board.views.home,name='home'),
+    path('pagination/detail/<int:blog_id>/',board.views.detail, name="detail"),
+    path('pagination/new/',board.views.new,name='new'),
+    path('pagination/create/',board.views.create, name="create"),
+    path('pagination/delete/<int:blog_id>/', board.views.delete, name="delete"),
+    path('pagination/edit/<int:blog_id>/',board.views.edit, name="edit"),
+    path('pagination/update/<int:blog_id>/',board.views.update,name='update'),
 ]

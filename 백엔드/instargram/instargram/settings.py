@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'board.apps.BoardConfig',
     'frontend.apps.FrontendConfig',
+    'el_pagination',
 ]
 
 MIDDLEWARE = [
