@@ -8,11 +8,11 @@ body{
  
 #m3{
     margin:auto;
-    width:1100px;
-    height:800px;
+    width:1400px;
+    height:1000px;
     /*position:relative;*/
-    background:transparent url(../images/bg-size.png) no-repeat 9px 27px;
- }
+    background:transparent url(../images/bg-size2.png) no-repeat 9px 27px;
+}
 #m2{
     width: 95%;
     height: 0px;
@@ -21,12 +21,11 @@ body{
 }
  
 #read_back{
-    float:left;
-    margin-left:100px;
-    border-radius: 100%;
-    background-color:aqua;
-    width:50px;
-    height:50px;
+    float:right;
+    margin-top:15%;
+    margin-right:100px;
+    width:30px;
+    height:100px;
     margin: 1px;
     border: solid;
     color: black;
@@ -60,8 +59,8 @@ body{
 }
 #read_card{
     float:left;
-    width:175px;
-    height:150px;
+    width:275px;
+    height:250px;
     background-color:aquamarine;
     border-radius: 12px;
 }
@@ -115,8 +114,8 @@ body{
     text-align:center;
 }
 input[type=search] {
-    margin-left : 168px;
-    margin-top:8px;
+    margin-left : 276px;
+    margin-top:18px;
     width: 200px;
     box-sizing: border-box;
     border: 2px solid #ccc;
