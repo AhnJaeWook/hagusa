@@ -1,0 +1,128 @@
+body{
+    background:#ccc url(../images/wood.jpg) repeat top left;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#444;
+    font-size:12px;
+    color: #000;
+}
+
+#m3{
+    margin:auto;
+    width:1400px;
+    height:1000px;
+    /*position:relative;*/
+    background:transparent url(../images/bg-size2.png) no-repeat 9px 27px;
+}
+#m2{
+    width: 95%;
+    height: 0px;
+    position : center;
+    text-align:right;
+}
+ 
+#read_back{
+    position:right;
+    margin-left:90%;
+    padding:10px 10px;
+    border: solid;
+    color: black;
+    width:50px;
+    height:50px;
+    font-size:20px;
+    text-align:center;
+    cursor: pointer;
+}
+#read_title{
+    width:100%;
+    height:50px;
+    background-color: (0,0,0,0);
+}
+#read_search{
+    margin-left:40%;
+    width:55%;
+    height : 100px;
+    float: left;
+    text-align:center;
+    background-color: aquamarine
+}
+#read_category{
+    margin-right:3%;
+    float:right;
+    width:77.8%;
+    height:620px; 
+}
+#read_jul{
+    float:left;
+    width:100%;
+    height:25px;
+}
+#read_card{
+    float:left;
+    width:275px;
+    height:250px;
+}
+#card_content{
+    width: 81%;
+    border-radius: 12px;
+    border:solid black 1px;
+}
+#card_center{
+    float:left;
+    margin-top:50px;
+}
+#card_below{
+    float:left;
+    margin-top:50px;
+}
+#card_btn{
+    float:left;
+    background-color: aqua; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(106, 243, 243);
+}  
+.button1:hover {
+    background-color: rgb(106, 243, 243);
+    color: white;
+}
+#read_blank{
+    float:left;
+    width:60px;
+    height:20px;
+}
+#read_blank1{
+    float:left;
+    width:95px;
+    height:60px;
+}
+input[type=search] {
+    margin-left : 305px;
+    margin-top:40px;
+    width: 180px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: white;
+    background-position: 10px 10px; 
+    padding: 12px 20px 12px 40px;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=search]:focus {
+    width: 75%;
+}

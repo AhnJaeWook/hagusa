@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">-->
+        <title>cafe in the hagusa</title>
+        <!--<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jbp93cj777"></script>-->
+        <link href = "{% static 'css/main.css' %}" rel = "stylesheet">
+    </head>
+    <body>
+        <div id=m2>
+            <div id="m3">
+                <a href="#">login</a>
+                <a href="#">signup</a>
+            </div>
+            <div id="main_title">
+                <font class="main_title_font">hagusa★★★★</font>
+            </div>
+            <form action="#">
+                <input type="search" placeholder="Search" aria-label="Search" size ="30">
+                <input type="submit"  value="" style="background-color:transparent;  border:0px transparent solid;"></button>
+            </form>
+            <div class="dropdown">
+                <botton class="dropbtn">+</botton>
+                <div class="dropdown-content">
+                    <a href="#">Action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                </div>
+            </div>
+           <!--<div id="map" style="width:80%;height:500px;"></div>-->
+            <div id="m6">빈공간</div>
+        </div>
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                zoom: 10
+            };
+                
+            var map = new naver.maps.Map('map', mapOptions);
+        </script>
+    </body>
+</html>
