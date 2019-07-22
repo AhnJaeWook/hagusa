@@ -7,28 +7,19 @@
         <title>cafe in the hagusa</title>
         <!--<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jbp93cj777"></script>-->
         <link href = "{% static 'css/main.css' %}" rel = "stylesheet">
+    </head>
     <body>
         <div id=m2>
             <div id="m3">
-                {% load socialaccount %}
-                {% providers_media_js %}
-
-                {% if user.is_authenticated %}
-                <a href="/accounts/logout">로그아웃</a><br>
-                {{user.username}} 님이 로그인 중
-
-                {% else %}
-                <a href="{% provider_login_url 'google' %}">구글 로그인</a><br>
-
-                {% endif %}
-                
+                <a href="#">login</a>
+                <a href="#">signup</a>
             </div>
             <div id="main_title">
                 <font class="main_title_font">hagusa★★★★</font>
             </div>
-            <form>
+            <form action="#">
                 <input type="search" placeholder="Search" aria-label="Search" size ="30">
-                <input type=submit  value="" style="background-color:transparent;  border:0px transparent solid;"></button>
+                <input type="submit"  value="" style="background-color:transparent;  border:0px transparent solid;"></button>
             </form>
             <div class="dropdown">
                 <botton class="dropbtn">+</botton>

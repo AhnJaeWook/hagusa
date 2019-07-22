@@ -36,6 +36,7 @@ urlpatterns = [
     path('bulletin/com/', frontend.views.bulletinComment, name="bulletinComment"),
     path('new/',frontend.views.new, name="new"),
     path('pr2/',frontend.views.pr2, name="pr2"),
+    path('pr22/',frontend.views.pr2, name="pr22"),
     path('pratice/',frontend.views.pratice, name="pratice"),
     path('pagination/',board.views.home,name='home'),
     path('pagination/detail/<int:blog_id>/',board.views.detail, name="detail"),
