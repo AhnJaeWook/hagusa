@@ -22,6 +22,7 @@ from django.conf import settings#내 세팅을 가져와라
 from django.conf.urls.static import static#url들을 가져와라
 
 urlpatterns = [
+    path('love/',inidea.views.love, name="love"),
     path('read/', inidea.views.read, name = "read"),
     path('read1/', inidea.views.read1, name= "read1"),
     path('admin/', admin.site.urls),
@@ -34,5 +35,5 @@ urlpatterns = [
     path('bulletin/com/', inidea.views.bulletinComment, name="bulletinComment"),
     path('new/',inidea.views.new, name="new"),
     path('pr2/',inidea.views.pr2, name="pr2"),
-    path('pratice/',inidea.views.pratice, name="pratice"),
+    path('practice/',inidea.views.practice, name="practice"),
 ]

@@ -11,7 +11,7 @@ body{
     width:1100px;
     height:800px;
     /*position:relative;*/
-    background:transparent url(../images/bg-size.png) no-repeat 9px 27px;
+    background:transparent url(../images/bg.jpg) no-repeat 9px 27px;
 }
 
 #container {
@@ -33,7 +33,7 @@ margin: 20px;
 
 #content {
 border: 1px solid #cccccc;
-background-color: white;
+background-color:rgba( 255, 255, 255, 0.5 );;
 width:1000px;
 height: 700px;
 }
@@ -66,15 +66,17 @@ border: 1px solid blue;
 #explain{
 display: inline-block;
 width: 55%;
-height: 25%;
+height: 28%;
 border: 1px solid blue;
+border-radius: 1px solid blue;
 
 }
-.image{
+#image1{
     display: inline-block;
-    width: 25%;
-    height: 25%;
-    border: 1px solid blue;
+    width: 38%;
+    height: 28%;
+    border-radius: 12px;
+    background:transparent url(../images/백꿈.png) no-repeat;
 }
 
 #name2 {

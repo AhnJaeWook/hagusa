@@ -14,6 +14,9 @@ def read1(request):
 
 def main(request):
     return render(request, "main.html")
+
+def love(request):
+    return render(request, "maumdaero.html")
     
 def bulletin(request):
     return render(request, "bulletin.html")
@@ -36,5 +39,5 @@ def new(request):
 def pr2(request):
     return render(request, "pr2.html")
 
-def pratice(request):
-    return render(request, "pratice.html")
+def practice(request):
+    return render(request, "practice.html")

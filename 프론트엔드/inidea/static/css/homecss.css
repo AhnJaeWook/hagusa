@@ -1,61 +1,69 @@
 body{
-	background:#ccc url(../images/wood.jpg) repeat top left;
-	font-family: Arial, Helvetica, sans-serif;
-	color:#444;
-	font-size:12px;
-	color: #000;
+    background:#ccc url(../images/wood.jpg) repeat top left;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#444;
+    font-size:12px;
+    color: #000;
 }
-
+ 
 #m3{
     margin:auto;
     width:1100px;
     height:800px;
     /*position:relative;*/
     background:transparent url(../images/bg-size.png) no-repeat 9px 27px;
+ }
+#m2{
+    width: 95%;
+    height: 0px;
+    position : center;
+    text-align:right;
 }
-
+ 
 #read_back{
     float:left;
     margin-left:100px;
+    border-radius: 100%;
     background-color:aqua;
-    padding: 15px 30px;
-    margin: 2px;
+    width:50px;
+    height:50px;
+    margin: 1px;
     border: solid;
     color: black;
+    font-size:20px;
     text-align:center;
-    font-size:16px;
     cursor: pointer;
 }
 #read_title{
     width:100%;
-    height:100px;
-    background-color: #82FA58;
+    height:50px;
+    background-color: (0,0,0,0);
 }
 #read_search{
-    width:100%;
+    margin-left:40%;
+    width:55%;
     height : 100px;
     float: left;
     text-align:center;
     background-color: blue;
 }
-#read_navbar{
-    float:right;
-}
 #read_category{
-    width:100%;
-    height:600px;
-    border-style:solid; border-width:2px; border-color:black;
+    margin-right:3%;
+    float:right;
+    width:77.8%;
+    height:620px; 
 }
 #read_jul{
     float:left;
-    width: 100%;
+    width:100%;
     height:25px;
 }
 #read_card{
     float:left;
-    width:250px;
-    height:175px;
-    background-color:gray;
+    width:175px;
+    height:150px;
+    background-color:aquamarine;
+    border: 5px solid gainsboro;
 }
 #card_center{
     float:left;
@@ -65,23 +73,63 @@ body{
     float:left;
     margin-top:500px;
 }
+#card_btn{
+    float:left;
+    background-color: aqua; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(106, 243, 243);
+}  
+.button1:hover {
+    background-color: rgb(106, 243, 243);
+    color: white;
+}
 #read_blank{
     float:left;
-    width:25px;
-    height:25px;
-    background-color:white;
+    width:60px;
+    height:20px;
 }
-
+#read_blank1{
+    float:left;
+    width:100px;
+    height:60px;
+}
 #read_under{
     width:100%;
     height:100px;
     clear:both;
-    background-color:#C8FE2E;
+    background-color:(0,0,0,0);
     text-align:center;
 }
-#m2{
-    margin:auto;
-    width:800px;
-    margin-top: 5%;
-    background-color:white;
+input[type=search] {
+    margin-left : 168px;
+    margin-top:8px;
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 32px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    padding: 12px 20px 12px 40px;
+    background-repeat: no-repeat;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=search]:focus {
+    width: 75%;
 }
