@@ -7,6 +7,7 @@ from django.contrib import auth
 
 # Create your views here.
 def read(request):#blog 함수임
+    
     return render(request, "read.html")
 
 def read1(request):
