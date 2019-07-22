@@ -36,5 +36,8 @@ def new(request):
 def pr2(request):
     return render(request, "pr2.html")
 
+def pr22(request):
+    return render(request, "pr2.html")
+
 def pratice(request):
     return render(request, "pratice.html")
