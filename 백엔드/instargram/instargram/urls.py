@@ -32,7 +32,7 @@ urlpatterns = [
     path('bulletin/menu/', frontend.views.bulletinMenu, name="bulletinMenu"),
     path('bulletin/map/', frontend.views.bulletinMap, name="bulletinMap"),
     path('bulletin/com/', frontend.views.bulletinComment, name="bulletinComment"),
-    path('new/',frontend.views.new, name="new"),
+    path('new1/',frontend.views.new1, name="new1"),
     path('pr2/',frontend.views.pr2, name="pr2"),
     path('pratice/',frontend.views.pratice, name="pratice"),
 ]
