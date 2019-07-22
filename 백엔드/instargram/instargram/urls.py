@@ -20,6 +20,8 @@ from django.conf.urls.static import static#url들을 가져와라
 
 import frontend.views#블로그안에 있는 views라는 파이썬 파일을 가져옴
 import board.views
+import accounts.views
+from accounts import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('photo.urls')),
@@ -34,5 +36,15 @@ urlpatterns = [
     path('bulletin/com/', frontend.views.bulletinComment, name="bulletinComment"),
     path('new1/',frontend.views.new1, name="new1"),
     path('pr2/',frontend.views.pr2, name="pr2"),
+    path('pr22/',frontend.views.pr2, name="pr22"),
     path('pratice/',frontend.views.pratice, name="pratice"),
+    path('pagination/',board.views.home,name='home'),
+    path('pagination/detail/<int:blog_id>/',board.views.detail, name="detail"),
+    path('pagination/new/',board.views.new,name='new'),
+    path('pagination/create/',board.views.create, name="create"),
+    path('pagination/delete/<int:blog_id>/', board.views.delete, name="delete"),
+    path('pagination/edit/<int:blog_id>/',board.views.edit, name="edit"),
+    path('pagination/update/<int:blog_id>/',board.views.update,name='update'),
+    path('/',include('allauth.urls')),
+
 ]

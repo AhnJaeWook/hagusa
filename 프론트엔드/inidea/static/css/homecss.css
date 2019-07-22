@@ -5,14 +5,14 @@ body{
     font-size:12px;
     color: #000;
 }
- 
+
 #m3{
     margin:auto;
-    width:1100px;
-    height:800px;
+    width:1400px;
+    height:1100px;
     /*position:relative;*/
-    background:transparent url(../images/bg-size.png) no-repeat 9px 27px;
- }
+    background:transparent url(../images/bg-size2.png) no-repeat 9px 27px;
+}
 #m2{
     width: 95%;
     height: 0px;
@@ -21,15 +21,13 @@ body{
 }
  
 #read_back{
-    float:left;
-    margin-left:100px;
-    border-radius: 100%;
-    background-color:aqua;
-    width:50px;
-    height:50px;
-    margin: 1px;
+    position:right;
+    margin-left:90%;
+    padding:10px 10px;
     border: solid;
     color: black;
+    width:50px;
+    height:50px;
     font-size:20px;
     text-align:center;
     cursor: pointer;
@@ -45,7 +43,7 @@ body{
     height : 100px;
     float: left;
     text-align:center;
-    background-color: blue;
+    background-color: aquamarine
 }
 #read_category{
     margin-right:3%;
@@ -60,18 +58,21 @@ body{
 }
 #read_card{
     float:left;
-    width:175px;
-    height:150px;
-    background-color:aquamarine;
-    border: 5px solid gainsboro;
+    width:275px;
+    height:250px;
+}
+#card_content{
+    width: 81%;
+    border-radius: 12px;
+    border:solid black 1px;
 }
 #card_center{
     float:left;
-    margin-top:250px;
+    margin-top:50px;
 }
 #card_below{
     float:left;
-    margin-top:500px;
+    margin-top:50px;
 }
 #card_btn{
     float:left;
@@ -104,26 +105,18 @@ body{
 }
 #read_blank1{
     float:left;
-    width:100px;
+    width:95px;
     height:60px;
 }
-#read_under{
-    width:100%;
-    height:100px;
-    clear:both;
-    background-color:(0,0,0,0);
-    text-align:center;
-}
 input[type=search] {
-    margin-left : 168px;
-    margin-top:8px;
-    width: 200px;
+    margin-left : 305px;
+    margin-top:40px;
+    width: 180px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 32px;
+    font-size: 20px;
     background-color: white;
-    background-image: url('searchicon.png');
     background-position: 10px 10px; 
     padding: 12px 20px 12px 40px;
     background-repeat: no-repeat;
