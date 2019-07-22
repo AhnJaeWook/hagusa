@@ -1,4 +1,10 @@
-
+body{
+    background:#ccc url(../images/wood.jpg) repeat top left;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#444;
+    font-size:12px;
+    color: #000;
+}
 #s_left{
     width: 20%;
     height: 700px;
@@ -24,16 +30,18 @@
     color: orange;
 }
 
-#m2{
-    margin:auto;
-    width:800px;
-    margin-top: 5%;
-}
-
 #m3{
-    width: 100%;
-    height: 50px;
-    background-color: #82FA58;
+    margin:auto;
+    width:1400px;
+    height:1000px;
+    /*position:relative;*/
+    background:transparent url(../images/bg-size2.png) no-repeat 9px 27px;
+}
+#m2{
+    width: 95%;
+    height: 0px;
+    position : center;
+    text-align:right;
 }
 
 #main_title{
@@ -95,9 +103,11 @@ float: left;
 text-align:center;
 }
 #bulletin_detail{
-width:80%;
-height : 400px;
+width:50%;
+height : 200px;
 float: left;
+margin-left:23%;
+margin-top:85%;
 text-align:center;
 background-color:salmon;
 }
@@ -109,28 +119,29 @@ text-align:center;
 }
 #bulletin_select_detail_introduce{
 width: 20%;
-height : 100px;
+height : 50px;
 float: center;
+margin-top:425%;
 text-align:center;
 background-color:hotpink;
 }
 #bulletin_select_detail_menu{
 width: 20%;
-height : 100px;
+height : 50px;
 float: center;
 text-align:center;
 background-color:blue;
 }
 #bulletin_select_detail_map{
 width: 20%;
-height : 100px;
+height : 50px;
 float: center;
 text-align:center;
 background-color:peru;
 }
 #bulletin_select_detail_comment{
 width: 20%;
-height : 100px;
+height : 50px;
 float: center;
 text-align:center;
 background-color:navajowhite;

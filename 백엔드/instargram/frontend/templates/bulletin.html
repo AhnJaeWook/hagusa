@@ -1,20 +1,22 @@
 {% load static %}
 <html>
     <head>
-        <link href = "{% static 'css/homecss.css' %}" rel = "stylesheet">
+        <link href = "{% static 'css/test.css' %}" rel = "stylesheet">
     </head>
     <body>
-        <div id=m2>
+    <div id="m3">
+        <div id="m2">
             <div id="main_title">
                 <font class="main_title_font">게시판</font>
                 <a href="#" class="item">login</a>
                 <a href="#" class="item">signup</a>
                 <a href="#" class="item">목록으로</a>
             </div>
-            <div id="bulletin">
-                <iframe src="/bulletin/intro" style="width:100%; height:500px">
+            <div id="bulletin"><center>
+                <iframe src="/bulletin/intro" style="margin-left:8%;width:100%; height:800px">
                 </iframe>
             </div>
         </div>
+    </div>    
     </body>
 </html>
