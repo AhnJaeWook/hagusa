@@ -139,3 +139,11 @@ input[type=search]:focus {
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 }
+
+h10[class=card-title] {
+    padding-bottom:-1rem;
+}
+
+.card-text:last-child {
+    margin-bottom: -1rem;
+}
