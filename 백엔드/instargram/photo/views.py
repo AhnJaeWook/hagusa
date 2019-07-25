@@ -15,7 +15,7 @@ from .models import Photo, Blog
 
 class PhotoList(ListView):
     model = Photo
-    template_name_suffix = '_list'
+    template_name_suffix = '_lost'
 
 class PhotoCreate(CreateView):
     model = Photo
@@ -98,9 +98,6 @@ class Photofavorite(View):
 
 def read(request):#blog 함수임
     return render(request, "read.html")
-
-def read1(request):
-    return render(request, "read1.html")
 
 def main(request):
     return render(request, "main.html")
