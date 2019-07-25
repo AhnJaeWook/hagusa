@@ -8,6 +8,7 @@ from django.views.generic.base import View
 from django.utils import timezone
 from django.contrib.auth.models import User#user만드는 함수들 가져와
 from django.contrib import auth
+from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from urllib.parse import urlparse
 
 from .models import Photo, Blog
@@ -16,6 +17,36 @@ from .models import Photo, Blog
 class PhotoList(ListView):
     model = Photo
     template_name_suffix = '_list'
+    def pagination(self):
+        blogs = Photo.objects
+        blog_list = Photo.objects.all()
+        total_len = len(blog_list)
+
+        paginator = Paginator(blog_list, 1)
+        page = request.GET.get('page')
+
+        try:
+            posts = paginator.get_page(page)
+        except PageNotAnInteger:
+            posts = paginator.get_page(1)
+        except EmptyPage:
+            posts = paginator.get_page(paginator.num_pages)
+    
+
+        index = posts.number -1
+        max_index = len(paginator.page_range)
+        start_index = index - 2 if index>=2 else 0
+
+        if index < 2:
+            end_index = 5-start_index
+        else:
+            end_index = index+3 if index <= max_index -3 else max_index
+    
+    
+        page_range = list(paginator.page_range[start_index:end_index])
+
+        return render(self,{'blogs':blogs,'posts':posts,'blog_list':blog_list,'page_range':page_range,'total_len':total_len,'max_index':max_index-2})
+    
 
 class PhotoCreate(CreateView):
     model = Photo
@@ -98,9 +129,6 @@ class Photofavorite(View):
 
 def read(request):#blog 함수임
     return render(request, "read.html")
-
-def read1(request):
-    return render(request, "read1.html")
 
 def main(request):
     return render(request, "main.html")

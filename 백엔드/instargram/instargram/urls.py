@@ -29,7 +29,6 @@ urlpatterns = [
     path('', include('photo.urls')),
     path('accounts/', include('accounts.urls')),
     path('read/', photo.views.read, name = "read"),
-    path('read1/', photo.views.read1, name= "read1"),
     path('main/', photo.views.main, name="main"),
     path('bulletin/', photo.views.bulletin, name="bulletin"),
     path('bulletin/intro/', photo.views.bulletinIntro, name="bulletinIntro"),
