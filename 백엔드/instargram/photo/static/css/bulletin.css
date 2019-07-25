@@ -1,0 +1,52 @@
+#m2{
+    width: 95%;
+    height: 0px;
+    position : center;
+    text-align:right;
+}
+
+#bulletin_detail{
+width:50%;
+height : 200px;
+float: left;
+margin-left:23%;
+margin-top:35%;
+text-align:center;
+background-color:salmon;
+}
+#bulletin_select{
+width:20%;
+height : 100px;
+float: left;
+text-align:center;
+}
+#bulletin_select_detail_introduce{
+width: 20%;
+height : 50px;
+float: center;
+margin-top:175%;
+text-align:center;
+background-color:hotpink;
+}
+#bulletin_select_detail_menu{
+width: 20%;
+height : 50px;
+float: center;
+text-align:center;
+background-color:blue;
+}
+#bulletin_select_detail_map{
+width: 20%;
+height : 50px;
+float: center;
+text-align:center;
+background-color:peru;
+}
+#bulletin_select_detail_comment{
+width: 20%;
+height : 50px;
+float: center;
+text-align:center;
+background-color:navajowhite;
+}
+.main_title_font{font-size:80px;color:black;}
