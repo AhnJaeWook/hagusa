@@ -22,6 +22,8 @@ import frontend.views#블로그안에 있는 views라는 파이썬 파일을 가
 import board.views
 import accounts.views
 from accounts import views
+import photo.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('photo.urls')),
@@ -45,6 +47,7 @@ urlpatterns = [
     path('pagination/delete/<int:blog_id>/', board.views.delete, name="delete"),
     path('pagination/edit/<int:blog_id>/',board.views.edit, name="edit"),
     path('pagination/update/<int:blog_id>/',board.views.update,name='update'),
-    path('/',include('allauth.urls')),
+    path('accounts/',include('allauth.urls')),
+    path('logout/',frontend.views.logout,name='logout'),
 
 ]

@@ -8,6 +8,7 @@ from django.views.generic.base import View
 from urllib.parse import urlparse
 
 from .models import Photo
+
 # Create your views here.
 
 class PhotoList(ListView):
