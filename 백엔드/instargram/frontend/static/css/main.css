@@ -27,7 +27,8 @@ body{
 }
 
 #map1{
-  float : center;
+  margin-top : 5%;
+  margin-left : 55%;
   background : url(../images/map.png) no-repeat;
 }
 

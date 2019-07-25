@@ -1,0 +1,154 @@
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">     
+</head>
+{% load static %}
+
+<body>
+    <style>
+      .btn-like{
+        display: inline-block;
+        width: 45px;
+        height: 40px;
+        background:url({% static 'images/instargram_img.png' %});
+        background-position: -285px -140px;
+        text-indent: -9999px;
+        overflow:hidden;
+        border:none;
+      }
+      .btn-like.active{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background:url({% static 'images/instargram_img.png' %});
+        background-position: -50px -400px;
+        text-indent: -9999px;
+        overflow:hidden;
+        border:none;
+      }
+      .btn-favorite{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background:url({% static 'images/instargram_img.png' %});
+        background-position: -290px 350px;
+        text-indent: -9999px;
+        overflow:hidden;
+        border:none;
+      }
+      .btn-favorite.active{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background:url({% static 'images/instargram_img.png' %});
+        background-position: -515px -100px;
+        text-indent: -9999px;
+        overflow:hidden;
+        border:none;
+      }
+    </style>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Dstagram</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'photo:index' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        {% load socialaccount %}
+        {% providers_media_js %}
+
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'photo:create' %}">게시글 작성</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+        </li> 
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{% provider_login_url 'google' %}">Login <span class="sr-only">(current)</span></a>
+        </li>
+        {% endif %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="container">
+    {% if messages %}
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-6">
+        {% for message in messages %}
+        <div class="alert alert-{{message.tag}}">{{message}}</div>
+        {% endfor %}
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+    {% endif %}
+  
+  {% block content %}
+  
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+  
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+    <meta charset="UTF-8">
+    <link href = "{% static 'css/homecss.css' %}" rel = "stylesheet">
+    <title>Hagusa</title>
+    </head>
+    <body>
+    <div id="m3">
+        <div id ="read_title"><center>.....</div>
+        <form>
+            <input type="search" placeholder="Search" aria-label="Search" size ="30">
+            <input type="submit"  value="" style="background-color:transparent;  border:0px transparent solid;"></button>
+        </form>
+        <div id="read_category">
+            <br>
+            
+            <h1>
+                <div id="read_blank1"></div>
+                <div id="read_card"><center>
+                    <img src="../static/images/백꿈.png" class="card-img-top"style="width:225px;height:150px;"><br>
+                        <div id="card_content">
+                            <h10 class="card-title">title</h10><br>
+                            <a class="card-text"style="font-size:15px;">설명글</a><br>
+                            <a href="#" class="btn btn-primary"style="font-size:12px;">Go somewhere</a>
+                        </div>
+                </div>
+                </div>
+            </h1>
+        </div>
+    </div>
+    </body>
+</html>
+{% endblock %}

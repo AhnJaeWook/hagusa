@@ -10,7 +10,9 @@
         <div class="alert-primary" role="alert">
             로그아웃이 잘 되었습니다.
         </div>
-        <a href="{% url 'accounts:login' %}" class="btn btn-outline-success">login 하기</a>
+        {% load socialaccount %}
+        {% providers_media_js %}
+        <a href="{% provider_login_url 'google' %}" class="btn btn-outline-success">login 하기</a>
     </div>
     <div class="col"></div>
 </div>

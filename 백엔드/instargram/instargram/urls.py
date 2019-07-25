@@ -22,22 +22,23 @@ import frontend.views#블로그안에 있는 views라는 파이썬 파일을 가
 import board.views
 import accounts.views
 from accounts import views
+import photo.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('photo.urls')),
     path('accounts/', include('accounts.urls')),
-    path('read/', frontend.views.read, name = "read"),
-    path('read1/', frontend.views.read1, name= "read1"),
-    path('main/', frontend.views.main, name="main"),
-    path('bulletin/', frontend.views.bulletin, name="bulletin"),
-    path('bulletin/intro/', frontend.views.bulletinIntro, name="bulletinIntro"),
-    path('bulletin/menu/', frontend.views.bulletinMenu, name="bulletinMenu"),
-    path('bulletin/map/', frontend.views.bulletinMap, name="bulletinMap"),
-    path('bulletin/com/', frontend.views.bulletinComment, name="bulletinComment"),
-    path('new1/',frontend.views.new1, name="new1"),
-    path('pr2/',frontend.views.pr2, name="pr2"),
-    path('pr22/',frontend.views.pr2, name="pr22"),
-    path('pratice/',frontend.views.pratice, name="pratice"),
+    path('read/', photo.views.read, name = "read"),
+    path('main/', photo.views.main, name="main"),
+    path('bulletin/', photo.views.bulletin, name="bulletin"),
+    path('bulletin/intro/', photo.views.bulletinIntro, name="bulletinIntro"),
+    path('bulletin/menu/', photo.views.bulletinMenu, name="bulletinMenu"),
+    path('bulletin/map/', photo.views.bulletinMap, name="bulletinMap"),
+    path('bulletin/com/', photo.views.bulletinComment, name="bulletinComment"),
+    path('new1/',photo.views.new1, name="new1"),
+    path('pr2/',photo.views.pr2, name="pr2"),
+    path('pr22/',photo.views.pr2, name="pr22"),
+    path('pratice/',photo.views.pratice, name="pratice"),
     path('pagination/',board.views.home,name='home'),
     path('pagination/detail/<int:blog_id>/',board.views.detail, name="detail"),
     path('pagination/new/',board.views.new,name='new'),
@@ -45,6 +46,7 @@ urlpatterns = [
     path('pagination/delete/<int:blog_id>/', board.views.delete, name="delete"),
     path('pagination/edit/<int:blog_id>/',board.views.edit, name="edit"),
     path('pagination/update/<int:blog_id>/',board.views.update,name='update'),
-    path('/',include('allauth.urls')),
+    path('accounts/',include('allauth.urls')),
+    path('logout/',photo.views.logout,name='logout'),
 
 ]
