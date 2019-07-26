@@ -70,11 +70,14 @@
         <a class="nav-link" href="{% url 'photo:create' %}">글 작성 <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+        <a class="nav-link" href="{% url 'accounts:logout' %}">로그아웃</a>
       </li> 
       {% else %}
       <li class="nav-item active">
-        <a class="nav-link" href="{% provider_login_url 'google' %}">Login <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% provider_login_url 'google' %}">구글 로그인 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% provider_login_url 'naver' %}">네이버 로그인 <span class="sr-only">(current)</span></a>
       </li>
       {% endif %}
       
@@ -82,19 +85,7 @@
     
   </div>
 </nav>
-<div class="container">
-  {% if messages %}
-  <div class="row">
-    <div class="col"></div>
-    <div class="col-6">
-      {% for message in messages %}
-      <div class="alert alert-{{message.tag}}">{{message}}</div>
-      {% endfor %}
-    </div>
-    <div class="col"></div>
-  </div>
-</div>
-  {% endif %}
+
 
 {% block content %}
 {% endblock %}
