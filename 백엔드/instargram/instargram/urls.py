@@ -48,5 +48,6 @@ urlpatterns = [
     path('pagination/update/<int:blog_id>/',board.views.update,name='update'),
     path('accounts/',include('allauth.urls')),
     path('logout/',photo.views.logout,name='logout'),
-
+    path('123/',frontend.views.read1,name="read1"),
+    path('login1/',frontend.views.login1,name="login1"),
 ]
