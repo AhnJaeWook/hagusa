@@ -48,6 +48,27 @@
       overflow:hidden;
       border:none;
     }
+    div#header{
+      background-color:#02c7ea;
+      position:fixed;
+      width:100%;
+      bottom:0;
+      left:0;
+    }
+    ul.nav{
+      float:left;
+      list-style:none;
+      width:45%;
+    }
+    ul.nav li{
+      float:left;
+    }
+    ul.nav a{
+      line-height:40px;
+      color:#FFFFFF;
+      padding:0 15px;
+      text-decoration: none;
+    }
   </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -85,7 +106,17 @@
     
   </div>
 </nav>
-
+<div id="header">
+  <div>
+    <ul class="nav">
+      <li><a href="#">회사소개</a></li>
+      <li><a href="#">제품정보</a></li>
+      <li><a href="#">기술정보</a></li>
+      <li><a href="#">게시판</a></li>
+      <li><a href="#">공지사항</a></li>
+    </ul>
+  </div> 
+</div>
 
 {% block content %}
 {% endblock %}
