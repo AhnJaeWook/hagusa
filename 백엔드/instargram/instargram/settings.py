@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google', #제공
+    'allauth.socialaccount.providers.naver',
 ]
 
 MIDDLEWARE = [
@@ -146,4 +147,5 @@ SITE_ID = 1
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-LOGIN_REDIRECT_URL = '/main'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">-->
+        <title>cafe in the hagusa</title>
+        <!--<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jbp93cj777"></script>-->
+        <link href = "{% static 'css/main.css' %}" rel = "stylesheet">
+    </head>
+    <body>
+        <div id=m2>
+            <div class="item1" style="text-align:center;">
+                <font class="main_title_font">원하는 카페를 찾아보아요!</font>
+            </div>
+            <div class="item2">
+                <form action="#">
+                    <input type="search" placeholder="Search" aria-label="Search" size ="30">
+                    <input type="submit"  value="" style="background-color:transparent;  border:0px transparent solid;"></button>
+                </form>
+            </div>
+            <div class="item3">
+                <botton class="dropbtn">+</botton>
+                <div class="dropdown-content">
+                    <a href="#">Action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                </div>
+            </div>
+            <div class="map" style="width:50%;height:300px;"></div>
+        </div>
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                zoom: 10
+            };
+                
+            var map = new naver.maps.Map('map', mapOptions);
+        </script>
+    </body>
+</html>
+{% endblock %}

@@ -1,0 +1,176 @@
+body{
+	background:#ccc url(../images/완8.jpg) repeat top left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#444;
+	font-size:12px;
+	color: #000;
+}
+
+.nav{
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: flex-start;
+    margin:auto;
+    
+    background-color:rgba( 255, 255, 255, 0.5 );
+    }
+
+.nav .logo img{
+    width:100px;
+    
+}
+.nav .nav_but a{
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:black;
+    background-color:orange;
+
+
+}
+
+#m2{
+    margin:auto;
+    width:1100px;
+    height:800px;
+    /*position:relative;*/
+  }
+
+#container {
+background-color: pink;
+flex-direction: column;
+flex-wrap:wrap;
+justify-content: space-around;
+display: flex;
+height: 800px;
+width: 1200px;
+}
+
+#name{
+    border-radius: 12px;
+    background:transparent url(../images/11.jpg) no-repeat;
+    width:500px;
+    height:20px;
+
+}
+
+#content {
+border: 1px solid #cccccc;
+background-color:rgba( 255, 255, 255, 0.5 );
+width:1000px;
+margin-top:250px;
+margin-left:35px;
+padding-top:10px;
+padding-bottom:10px;
+}
+
+.item {
+
+margin: 20px;
+border-radius: 4px;
+background-color: yellow;
+height: 200px;
+width: 200px;
+display: inline-block;
+};
+
+#item2 {
+flex-direction: column;
+flex-wrap:wrap;
+border: 1px solid #cccccc;
+width:80%;
+height: 90%;
+
+}
+
+
+#explain{
+display: inline-block;
+width: 55%;
+height: 220px;
+border-radius: 1px solid blue;
+background-color: white;
+
+}
+#image1{
+    
+    display: inline-block;
+    width: 250px;
+    height: 220px;
+    border-radius: 12px;
+    background:transparent url(../images/aac.jpg) no-repeat;
+    transition : .5s ease;
+    margin-right:20px;
+}
+
+#image1:hover{
+    transition: .5s ease;
+    border:2px solid orange;
+    background : white;
+    color : balck;
+    width: 300px;
+    height:300px;
+}
+
+#name2 {
+        
+    margin: 20px;
+    border: 1px solid #cccccc;
+    width:35%;
+    margin: 20px;
+}
+
+.service{
+    background: #ddd;
+
+}
+
+.service .container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin:auto;
+
+}
+.service .img{
+    height: 300px;
+}
+
+.service .img img{
+    height: 100%;
+    width: auto;
+}
+
+.service .text{
+    text-align :end;
+    color: #444;
+    padding-left:100px;
+}
+
+.service .text h1{
+    letter-spacing: 0.2em;
+}
+
+.service .text p{
+    word-wrap: break-word;
+    word-break: keep-all;
+    font-size:12px;    
+}
+
+.service .text button{
+    background: black;
+    color: white;
+    border: 2px solid white;
+    border-radius:5px;
+    padding: 5px 15px;
+    font-size:14px;
+    transition: .5s ease;
+}
+
+.service .text button:hover{
+    transition : .5s ease;
+    border :2px solid black;
+    color: black;
+}

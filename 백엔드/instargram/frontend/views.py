@@ -7,7 +7,6 @@ from django.contrib import auth
 
 # Create your views here.
 def read(request):#blog 함수임
-    
     return render(request, "read.html")
 
 def read1(request):
@@ -37,5 +36,14 @@ def new1(request):
 def pr2(request):
     return render(request, "pr2.html")
 
+
 def pratice(request):
     return render(request, "pratice.html")
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/main')
+
+def login1(request):
+    return render(request, "login1.html")
+

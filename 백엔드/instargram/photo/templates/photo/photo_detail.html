@@ -23,12 +23,7 @@
                     <a href="{% url 'photo:favorite' object.id%}" class="float-right btn-favorite {% if user in object.favorite.all%} active{%endif%}">저장하기!</a>
                 </li>
                 <li class="list-group-item">생성일 : {{object.created}}</li>
-                <li class="list-group-item">
-                    {% load disqus_tags %}
-                    <div class="card-body">
-                        {% disqus_show_comments %}
-                    </div>
-                </li>
+
             </ul>
             <div class="card-body">
                 <a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a>

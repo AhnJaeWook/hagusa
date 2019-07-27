@@ -1,46 +1,80 @@
 {% extends 'base.html' %}
-{% block title %}
-{% endblock %}
-
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">     
+  </head>
+  {% load static %}  
 {% block content %}
 
-<div class='container'>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-5">
-            {% for object in object_list %}
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 
-            <div class="card">
-                <div class="card-header">
-                    {{object.author}}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>hagusa cafe</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <style>
+            p { margin:20px 0px; }
+        </style>
+    </head>
+    
+    <link href = "{% static 'css/homecss.css' %}" rel = "stylesheet">
+    <body>
+    <div id="m3">
+        <div id ="read_title"><center>.....</div>
+        <form>
+            <input type="search" placeholder="Search" aria-label="Search" size ="30">
+            <input type="submit"  value="" style="background-color:transparent;  border:0px transparent solid;"></button>
+        </form>
+        <div id="read_category">
+            <br>
+                
+            {% for object in object_list %}
+            <h1>
+                <div id="read_blank1"></div>
+                <div id="read_card"><center></center>
+                    <a href="{% url 'photo:detail' object.id %}" class=""style="font-size:12px;">
+                        <img src="{{ object.image.url }}" class="card-img-top"style="width:225px;height:150px;"><br>                    
+                            <div id="card_content">
+                                <h10 class="card-title">{{object.author}}</h10><br>
+                                    <a class="card-text"style="font-size:15px;">{{object.text}}</a><br>
+                                
+                            </div>
+                    </a>
                 </div>
-                <img src="{{ object.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">{{object.text}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <a href="{% url 'photo:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} acitve {% endif %}">좋아요!</a>
-                        {% if object.like.all.count %}
-                        <span class = "float-left">
-                            {{object.like.all.count}}
-                        </span>
-                        {% endif %}
-                        <a href="{% url 'photo:favorite' object.id %}" class="float-right btn-favorite {% if user in object.favorite.all %} active{%endif%}">저장하기!</a>
-                    </li>
-                    <li class="list-group-item">생성일 : {{object.created}}</li>
-                </ul>
-                <div class="card-body">
-                    <a href="{% url 'photo:detail' object.id %}" class="card-link">댓글달기</a>
-                    {% if user == object.author %}
-                    <a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a>
-                    <a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a>
-                    {% endif %}
-                </div>
-            </div>
+            </h1>
+                {% if forloop.counter|divisibleby:3 %}
+                    <div id="read_jul"></div>
+                {% endif %}
             {% endfor %}
+
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{page_obj.previous_page_number}}" class = "page-link">&laquo;</a> 
+                {% else %}
+                    <span class="page-link">&laquo;</span>
+                {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <strong><span class="page-link">{{i}}</span></strong>
+                    {% else %}
+                        <a href="?page={{i}}" class = "page-link">{{ i }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %} 
+                    <a href="?page={{ page_obj.next_page_number }}" class = "page-link">&raquo;</a>
+                {% else %}
+                    <span class = "page-link">&raquo;</span>
+                {%endif %}
+            </ul>
         </div>
-        <div class="col"></div>
     </div>
-</div>
+
+    </body>
+</html>
 {% endblock %}

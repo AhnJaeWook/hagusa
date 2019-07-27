@@ -10,11 +10,12 @@ body{
     color: orange;
 }
 
+.item1 {grid-area: header;}
+.item2 {grid-area: search;}
+.item3 {grid-area: menu1;}
+.item4 {grid-area: map;}
+
 #m2{
-    margin:auto;
-    width:1400px;
-    height:1000px;
-    /*position:relative;*/
     background:transparent url(../images/bg-size2.png) no-repeat 9px 27px;
 }
 
@@ -27,7 +28,8 @@ body{
 }
 
 #map1{
-  float : center;
+  margin-top : 5%;
+  margin-left : 55%;
   background : url(../images/map.png) no-repeat;
 }
 
