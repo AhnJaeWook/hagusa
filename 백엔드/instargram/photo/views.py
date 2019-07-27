@@ -142,7 +142,7 @@ def comment(request, User_id):
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         comment_form.instance.author_id = request.user.id
-        comment_form.instance.document_id = document_id
+        comment_form.instance.User_id = User_id
         if comment_form.is_valid():
             comment = comment_form.save()
 
