@@ -11,6 +11,7 @@ from django.contrib import auth
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from urllib.parse import urlparse
 
+
 from .models import Photo, Blog
 # Create your views here.
 
@@ -135,3 +136,14 @@ def pratice(request):
 def logout(request):
     auth.logout(request)
     return redirect('/main')
+
+def comment(request, User_id):
+
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        comment_form.instance.author_id = request.user.id
+        comment_form.instance.document_id = document_id
+        if comment_form.is_valid():
+            comment = comment_form.save()
+
+    return redirect(User)
