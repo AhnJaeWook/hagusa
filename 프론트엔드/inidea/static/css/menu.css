@@ -1,0 +1,86 @@
+body{
+	background:#ccc url(../images/완7.png) no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#444;
+	font-size:12px;
+	color: #000;
+}
+
+#m2{
+    margin:auto;
+    width:1100px;
+    height:800px;
+    /*position:relative;*/
+    background:transparent url(../images/완성3.jpg) no-repeat 9px 27px;
+}
+
+#container {
+background-color: pink;
+flex-direction: column;
+flex-wrap:wrap;
+justify-content: space-around;
+display: flex;
+height: 800px;
+width: 1200px;
+}
+
+#name{
+    border-radius: 12px;
+    /**/
+    background:transparent url(../images/액자.png) no-repeat;
+    font-size : 20px;
+    width:500px;
+    height:20px;
+    background-color: black;
+}
+
+#content {
+border: 1px solid #cccccc;
+background-color:rgba( 255, 255, 255, 0.5 );;
+width:800px;
+
+}
+.item {
+
+margin: 20px;
+border-radius: 4px;
+background-color: yellow;
+height: 200px;
+width: 200px;
+display: inline-block;
+};
+
+#item2 {
+flex-direction: column;
+flex-wrap:wrap;
+border: 1px solid #cccccc;
+width:80%;
+height: 90%;
+
+}
+
+
+#explain{
+display: inline-block;
+width: 55%;
+height: 220px;
+border-radius: 1px solid blue;
+background-color: white;
+}
+
+#image1{
+    display: inline-block;
+    width: 250px;
+    height: 220px;
+    border-radius: 12px;
+    background:transparent url(../images/1.jpg) no-repeat;
+}
+
+
+#name2 {
+        
+    margin: 20px;
+    border: 1px solid #cccccc;
+    width:35%;
+    margin: 20px;
+}

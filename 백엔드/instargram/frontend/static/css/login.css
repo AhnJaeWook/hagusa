@@ -1,0 +1,36 @@
+#block{
+    text-align: center;
+    margin-top:10%;
+    width:70%;
+    height:300px;
+    border-radius:10px;
+    border: 5px solid gray;
+}
+#inblock1{
+    width: 60%;
+    height:5%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius:10px;
+    background-color: rgb(255, 255, 255);
+}
+#inblock2{
+    margin-top:3%;
+    width: 60%;
+    height:5%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius:10px;
+    background-color: #00c639;
+    color:white;
+}
+#inblock3{
+    margin-top:6%;
+    width: 60%;
+    height:5%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius:10px;
+    background-color: #3a5897;
+    color:white;
+}
