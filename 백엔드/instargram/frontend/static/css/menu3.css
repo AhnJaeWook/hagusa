@@ -1,5 +1,5 @@
 body{
-	background:#ccc url(../images/완8.jpg) repeat top left;
+	background:#ccc url(../images/완7.png) repeat top left;
 	font-family: Arial, Helvetica, sans-serif;
 	color:#444;
 	font-size:12px;
@@ -38,13 +38,13 @@ body{
   }
 
 #container {
-background-color: pink;
-flex-direction: column;
-flex-wrap:wrap;
-justify-content: space-around;
-display: flex;
-height: 800px;
-width: 1200px;
+    background-color: pink;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    display: flex;
+    height: 800px;
+    width: 1200px;
 }
 
 #name{
@@ -56,43 +56,44 @@ width: 1200px;
 }
 
 #content {
-border: 1px solid #cccccc;
-background-color:rgba( 255, 255, 255, 0.5 );
-width:1000px;
-margin-top:250px;
-margin-left:35px;
-padding-top:10px;
-padding-bottom:10px;
+    border: 1px solid #cccccc;
+    background-color:rgba( 255, 255, 255, 0.5 );
+    width:1000px;
+    margin-top:250px;
+    margin-left:35px;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 .item {
 
-margin: 20px;
-border-radius: 4px;
-background-color: yellow;
-height: 200px;
-width: 200px;
-display: inline-block;
+    margin: 20px;
+    border-radius: 4px;
+    background-color: yellow;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
 };
 
 #item2 {
-flex-direction: column;
-flex-wrap:wrap;
-border: 1px solid #cccccc;
-width:80%;
-height: 90%;
+    flex-direction: column;
+    flex-wrap:wrap;
+    border: 1px solid #cccccc;
+    width:80%;
+    height: 90%;
 
 }
 
 
 #explain{
-display: inline-block;
-width: 55%;
-height: 220px;
-border-radius: 1px solid blue;
-background-color: white;
-
+    display: inline-block;
+    white-space : nowrap;
+    word-wrap: break-word;
+    width: 50%;
+    height: 220px;
+    border: 1px solid blue;
 }
+
 #image1{
     
     display: inline-block;
@@ -107,8 +108,8 @@ background-color: white;
 #image1:hover{
     transition: .5s ease;
     border:2px solid orange;
-    background : white;
-    color : balck;
+    background:transparent url(../images/aac.jpg) no-repeat;
+    color : black;
     width: 300px;
     height:300px;
 }
