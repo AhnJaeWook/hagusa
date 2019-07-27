@@ -43,3 +43,6 @@ def logout(request):
     auth.logout(request)
     return redirect('/main')
 
+def login1(request):
+    return render(request, "login1.html")
+
