@@ -3,46 +3,52 @@
 {% endblock %}
 
 {% block content %}
-
-<div class='container'>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-5">
-            {% for object in object_list %}
-
-            <div class="card">
-                <div class="card-header">
-                    {{object.author}}
-                </div>
-                 <img src="{{ object.image.url }}" class="card-img-top" alt="..."> 
-                <div class="card-body">
-                    <p class="card-text">{{object.text}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <a href="{% url 'photo:like' object.id %}" class="float-left btn-like {%if user in object.like.all %} acitve {% endif %}">좋아요!</a>
-                        {% if object.like.all.count %}
-                        <span class = "float-left">
-                            {{object.like.all.count}}
-                        </span>
-                        {% endif %}
-                        <a href="{% url 'photo:favorite' object.id %}" class="float-right btn-favorite {% if user in object.favorite.all %} active{%endif%}">저장하기!</a>
-                    </li>
-                    <li class="list-group-item">생성일 : {{object.created}}</li>
-                </ul>
-                <div class="card-body">
-                    <a href="{% url 'photo:detail' object.id %}" class="card-link">댓글달기</a>
-                    {% if user == object.author %}
-                    <a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a>
-                    <a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a>
-                    {% endif %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">-->
+        <title>cafe in the hagusa</title>
+        <!--<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=jbp93cj777"></script>-->
+        <link href = "{% static 'css/main.css' %}" rel = "stylesheet">
+    </head>
+    <body>
+        <div id=m2>
+            <div class="item1" style="text-align:center;">
+                <font class="main_title_font">원하는 카페를 찾아보아요!</font>
+            </div>
+            <div class="item2">
+                <form action="#">
+                    <input type="search" placeholder="Search" aria-label="Search" size ="30">
+                    <input type="submit"  value="" style="background-color:transparent;  border:0px transparent solid;"></button>
+                </form>
+            </div>
+            <div class="item3">
+                <botton class="dropbtn">+</botton>
+                <div class="dropdown-content">
+                    <a href="#">Action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
+                    <a href="#">Another action</a>
                 </div>
             </div>
-            {% endfor %}
-           <div id="map1" style="width:20%;height:500px;"></div>
-            <div id="m6">빈공간</div>
+            <div class="map" style="width:50%;height:300px;"></div>
         </div>
-        <div class="col"></div>
-    </div>
-</div>
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                zoom: 10
+            };
+                
+            var map = new naver.maps.Map('map', mapOptions);
+        </script>
+    </body>
+</html>
 {% endblock %}
