@@ -5,7 +5,27 @@ body{
     font-size:12px;
     color: #000;
 }
-
+div#header{
+    background-color:#02c7ea;
+    position:fixed;
+    width:100%;
+    bottom:0;
+    left:0;
+}
+ul.nav{
+    float:left;
+    list-style:none;
+    width:45%;
+}
+ul.nav li{
+    float:left;
+}
+ul.nav a{
+    line-height:40px;
+    color:#FFFFFF;
+    padding:0 15px;
+    text-decoration: none;
+}
 #m3{
     margin:auto;
     width:1400px;
