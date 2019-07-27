@@ -36,7 +36,6 @@ width: 1200px;
 border: 1px solid #cccccc;
 background-color:rgba( 255, 255, 255, 0.5 );;
 width:1000px;
-height: 700px;
 }
 .item {
 
@@ -81,4 +80,15 @@ background-color: white;
     border: 1px solid #cccccc;
     width:35%;
     margin: 20px;
+}
+
+.btn {
+    cursor : pointer;
+    border : 1px solid black;
+    border-radius : 4px;
+    padding : 6px 7px;
+    text-align : center;
+    background : #fff;
+    color : black;
+    font-weight: bold;
 }
