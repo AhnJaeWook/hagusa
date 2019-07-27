@@ -22,9 +22,16 @@ body{
     background:transparent url(../images/bg-size2.png) no-repeat 9px 27px;
 }
 #m4{
+  position : relative;
+  display: grid;
+  top : 50px;
   margin : auto;
   width:1400px;
   height:1000px;
+  grid-template-areas: 
+  'header header header'
+  'search search search'
+  'menu1 map map';
   background-color:skyblue;
 }
 
