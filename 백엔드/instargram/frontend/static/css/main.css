@@ -16,7 +16,16 @@ body{
 .item4 {grid-area: map;}
 
 #m2{
+    margin : auto;
+    width:1400px;
+    height:1000px;
     background:transparent url(../images/bg-size2.png) no-repeat 9px 27px;
+}
+#m4{
+  margin : auto;
+  width:1400px;
+  height:1000px;
+  background-color:skyblue;
 }
 
 #m3{
