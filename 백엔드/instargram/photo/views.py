@@ -125,6 +125,9 @@ def new1(request):
 
 def pr2(request):
     return render(request, "pr2.html")
+    
+def pr3(request):
+    return render(request, "pr3.html")
 
 def pratice(request):
     return render(request, "pratice.html")

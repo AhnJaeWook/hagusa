@@ -37,6 +37,7 @@ urlpatterns = [
     path('bulletin/com/', photo.views.bulletinComment, name="bulletinComment"),
     path('new1/',photo.views.new1, name="new1"),
     path('pr2/',photo.views.pr2, name="pr2"),
+    path('pr3/',photo.views.pr3, name="pr3"),
     path('pr22/',photo.views.pr2, name="pr22"),
     path('pratice/',photo.views.pratice, name="pratice"),
     path('pagination/',board.views.home,name='home'),
