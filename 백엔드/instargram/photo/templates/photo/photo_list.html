@@ -51,26 +51,6 @@
                     <div id="read_jul"></div>
                 {% endif %}
             {% endfor %}
-            
-            <ul class="pagination">
-                {% if page_obj.has_previous %}
-                    <a href="?page={{page_obj.previous_page_number}}" class = "page-link">&laquo;</a> 
-                {% else %}
-                    <span class="page-link">&laquo;</span>
-                {% endif %}
-                {% for i in paginator.page_range %}
-                    {% if page_obj.number == i %}
-                        <strong><span class="page-link">{{i}}</span></strong>
-                    {% else %}
-                        <a href="?page={{i}}" class = "page-link">{{ i }}</a>
-                    {% endif %}
-                {% endfor %}
-                {% if page_obj.has_next %} 
-                    <a href="?page={{ page_obj.next_page_number }}" class = "page-link">&raquo;</a>
-                {% else %}
-                    <span class = "page-link">&raquo;</span>
-                {%endif %}
-            </ul>
         </div>
     </div>
 
