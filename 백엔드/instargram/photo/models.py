@@ -29,18 +29,16 @@ class Photo(models.Model):
         return reverse('photo:detail', args=[self.id])
 
 class Comment(models.Model):
-    post = models.ForeignKey(User, on_delete=models,related_name = 'comments')
-    author = models.CharField(max_length=200)
-    text = models.TextField(blank=True)
+    document = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True, blank=True, related_name='comments')
+    text = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    approved_comment = models.BooleanField(default=False)
+    updated = models.DateTimeField(auto_now=True)
+    like = models.IntegerField(default=0)
+    dislike = models.IntegerField(default=0)
 
-    def approve(self):
-        self.approved_comment = True
-        self.save()
-        
     def __str__(self):
-        return "text : "+self.text
+        return (self.author.username if self.author else "무명")+ "의 댓글"
         
 class Blog(models.Model):
     title = models.CharField(max_length=200)
