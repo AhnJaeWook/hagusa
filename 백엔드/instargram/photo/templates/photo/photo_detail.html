@@ -12,26 +12,72 @@
                 <h5 class="card-title">{{object.author}}</h5>
                 <p class="card-text">{{object.text}}</p>
             </div>
+            
+            <div class="card-body">
+                <a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a>
+                <a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a>               
+            </div>
             <ul class="list-group-flush">
                 <li class="list-group-item">
-                    <a href="{% url 'photo:like' object.id%}" class="float-left btn-like {%if user in object.like.all%} active {% endif %}">좋아요!</a>
+                    <a href="{% url 'photo:like' object.id%}" class="">좋아요!</a>
                     {% if object.like.all.count %}
                     <span class = "float-left">
                         {{object.like.all.count}}
                     </span>
                     {% endif %}
-                    <a href="{% url 'photo:favorite' object.id%}" class="float-right btn-favorite {% if user in object.favorite.all%} active{%endif%}">저장하기!</a>
+                    
+                    <a href="{% url 'photo:favorite' object.id%}" class="">저장하기!</a>
                 </li>
                 <li class="list-group-item">생성일 : {{object.created}}</li>
 
             </ul>
-            <div class="card-body">
-                <a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a>
-                <a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a>               
-            </div>
         </div>
     </div>
 
     <div class="col"></div>
 </div>
+<form action="{ % url "board:comment" object.id % }" method="POST">
+{% csrf_token %}
+
+    
+    <input type="submit" value="Comment" class="btn btn-outline-primary">
+
+</form>
+
+<table class="table table-striped">
+    {% for comment in comments %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="{ % url 'board:comment_delete' comment.id % }">삭제하기</a></td>
+        <td><a href="{ % url 'board:comment_update' comment.id % }">수정하기</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+
+<form action="{ % url "board:comment" object.id % }" method="POST">
+{% csrf_token %}
+    
+        
+    <input type="submit" value="Comment" class="btn btn-outline-primary">
+    
+</form>
+    
+<table class="table table-striped">
+    {% for comment in comments %}        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="{ % url 'board:comment_delete' comment.id % }">삭제하기</a></td>
+        <td><a href="{ % url 'board:comment_update' comment.id % }">수정하기</a></td>
+    </tr>
+    {% endfor %}
+</table>
+    
 {% endblock %}
