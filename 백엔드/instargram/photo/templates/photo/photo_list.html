@@ -36,7 +36,6 @@
                 
             {% for object in object_list %}
             <h1>
-                <div id="read_blank1"></div>
                 <div id="read_card"><center></center>
                     <a href="{% url 'photo:detail' object.id %}" class=""style="font-size:12px;">
                         <img src="{{ object.image.url }}" class="card-img-top"style="width:225px;height:150px;"><br>                    
