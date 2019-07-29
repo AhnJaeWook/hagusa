@@ -1,0 +1,40 @@
+.list_intro{
+    padding-top:50px;
+    padding-bottom: 50px;
+    color: black;
+}
+
+.list_intro .container{
+    max-width : 1000px;
+    margin : auto;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+}
+
+
+.list_intro .container .list_intro_left{
+    flex:1.5;
+}
+
+
+.list_into .container .list_intro_left h2{
+    font-size: 12px;
+    opacity : .6;
+    letter-spacing : 0.2em;
+}
+
+.list_intro .container .list_intro_left h1{
+    margin-top: 0;
+    font-size : 36px;
+    letter-spacing: 0.1em;
+}
+
+.list_intro .container .list_intro_left p{
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    opacity: .8;
+    word-wrap: break-word;
+    word-break: keep-all;
+}
+

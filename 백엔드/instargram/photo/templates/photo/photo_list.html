@@ -33,6 +33,7 @@
         </form>
         <div id="read_category">
             <br>
+<<<<<<< HEAD
 
             
             <select id="sort-select" onchange="location = this.value;">
@@ -44,9 +45,10 @@
               </select>
 
 
+=======
+            <div id="read_blank1"></div>
+>>>>>>> 3f7d6dae4bf338cf0116c2a8c4085b2544f144eb
             {% for object in object_list %}
-            <h1>
-                <div id="read_blank1"></div>
                 <div id="read_card"><center></center>
                     <a href="{% url 'photo:detail' object.id %}" class=""style="font-size:12px;">
                         <img src="{{ object.image.url }}" class="card-img-top"style="width:225px;height:150px;"><br>                    
@@ -61,31 +63,13 @@
                             </div>
                     </a>
                 </div>
-            </h1>
                 {% if forloop.counter|divisibleby:3 %}
                     <div id="read_jul"></div>
+                    <div id="read_blank1"></div>
+                {% else %}
+                    <div id="read_blank"></div>
                 {% endif %}
             {% endfor %}
-            
-            <ul class="pagination">
-                {% if page_obj.has_previous %}
-                    <a href="?page={{page_obj.previous_page_number}}" class = "page-link">&laquo;</a> 
-                {% else %}
-                    <span class="page-link">&laquo;</span>
-                {% endif %}
-                {% for i in paginator.page_range %}
-                    {% if page_obj.number == i %}
-                        <strong><span class="page-link">{{i}}</span></strong>
-                    {% else %}
-                        <a href="?page={{i}}" class = "page-link">{{ i }}</a>
-                    {% endif %}
-                {% endfor %}
-                {% if page_obj.has_next %} 
-                    <a href="?page={{ page_obj.next_page_number }}" class = "page-link">&raquo;</a>
-                {% else %}
-                    <span class = "page-link">&raquo;</span>
-                {%endif %}
-            </ul>
         </div>
     </div>
 
