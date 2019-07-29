@@ -33,9 +33,8 @@
         </form>
         <div id="read_category">
             <br>
-                
+            <div id="read_blank1"></div>
             {% for object in object_list %}
-            <h1>
                 <div id="read_card"><center></center>
                     <a href="{% url 'photo:detail' object.id %}" class=""style="font-size:12px;">
                         <img src="{{ object.image.url }}" class="card-img-top"style="width:225px;height:150px;"><br>                    
@@ -45,9 +44,11 @@
                             </div>
                     </a>
                 </div>
-            </h1>
                 {% if forloop.counter|divisibleby:3 %}
                     <div id="read_jul"></div>
+                    <div id="read_blank1"></div>
+                {% else %}
+                    <div id="read_blank"></div>
                 {% endif %}
             {% endfor %}
         </div>
