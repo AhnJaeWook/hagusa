@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google', #제공
     'allauth.socialaccount.providers.naver',
+    'hitcount',
 ]
 
 MIDDLEWARE = [

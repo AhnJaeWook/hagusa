@@ -43,13 +43,11 @@ class Blog(models.Model):
     def pretty_pub_date(self):
         return self.pub_date.strftime("%y.%m.%d")
 
+
 class Comment(models.Model):
-    User=models.ForeignKey(Photo,on_delete=models.CASCADE, related_name='comments')
-    author = models.ForeignKey(get_user_model(),on_delete=models.SET_NULL,null=True,blank=True,related_name='comments')
-    text = models.TextField(blank=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    like = models.IntegerField(default=0)
+ 
+    blog = models.ForeignKey(Photo, on_delete=True, null=True)
+    comment_date = models.DateTimeField(auto_now_add=True)
+    comment_user = models.TextField(max_length=20)
     
-    def __str__(self):
-        return (self.author.username if self.author else "무명")+ "의 댓글"
+    comment_textfield = models.TextField()
