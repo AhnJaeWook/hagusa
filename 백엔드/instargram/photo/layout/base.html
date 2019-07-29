@@ -108,13 +108,25 @@
 </nav>
 <div id="header">
   <div>
-    <ul class="nav">
-      <li><a href="#">회사소개</a></li>
-      <li><a href="#">제품정보</a></li>
-      <li><a href="#">기술정보</a></li>
-      <li><a href="#">게시판</a></li>
-      <li><a href="#">공지사항</a></li>
-    </ul>
+      <ul class="pagination"style="margin-left:55%;">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{page_obj.previous_page_number}}" class = "page-link">&laquo;</a> 
+                {% else %}
+                    <span class="page-link">&laquo;</span>
+                {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <strong><span class="page-link">{{i}}</span></strong>
+                    {% else %}
+                        <a href="?page={{i}}" class = "page-link">{{ i }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %} 
+                    <a href="?page={{ page_obj.next_page_number }}" class = "page-link">&raquo;</a>
+                {% else %}
+                    <span class = "page-link">&raquo;</span>
+                {% endif %}
+        </ul>
   </div> 
 </div>
 

@@ -1,4 +1,4 @@
-{% load static %}
+<!--{% load static %}
 <h1> new page </h1>
 
 <head> 
@@ -35,3 +35,44 @@
    </center>
 
   </body>
+  -->
+  <!DOCTYPE HTML>
+  <html>
+
+    <head>
+      <title>클릭하면 뜨는 팝업</title>
+
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('#pop_bt').click(function(){
+        $('#pop').show();
+      });
+      $('#close').click(function(){
+        $('#pop').hide();
+      });
+    });
+    </script>
+
+    </head>
+
+
+    <body>
+      <div id="pop_bt">
+        팝업띄우기
+      </div>
+
+      <div id="pop" style="display:none;">
+        <div style="height:370px;">
+          안녕하세요 늑대털쓴양입니다
+        </div>
+        <div>
+          
+          <div id="close">close</div>
+
+        </div>
+      </div>
+
+    </body>
+  </html>
