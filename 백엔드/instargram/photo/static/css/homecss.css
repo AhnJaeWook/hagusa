@@ -57,6 +57,7 @@ body{
     height:25px;
 }
 #read_card{
+    margin-left : 50px;
     float:left;
     width:275px;
     height:250px;
