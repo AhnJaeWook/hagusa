@@ -16,6 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import thisisapp.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',thisisapp.views.home,name='home'),
+    path('detail/<int:blog_id>/',thisisapp.views.detail, name="detail"),
+    path('new/',thisisapp.views.new,name='new'),
+    path('create/',thisisapp.views.create, name="create"),
+    path('delete/<int:blog_id>/', thisisapp.views.delete, name="delete"),
+    path('edit/<int:blog_id>/',thisisapp.views.edit, name="edit"),
+    path('update/<int:blog_id>/',thisisapp.views.update,name='update'),
+    path(r'^(?P<post_pk>\d+)/comment/new/$',thisisapp.views.comment_new,name='comment_new'), 
+    path(r'^(?P<post_pk>\d+)/comment/(?P<pk>\d+)/edit/$',thisisapp.views.comment_edit,name='comment_edit'), 
+    path(r'^(?P<post_pk>\d+)/comment/(?P<pk>\d+)/delete/$',thisisapp.views.comment_delete,name='comment_delete'), 
 ]
