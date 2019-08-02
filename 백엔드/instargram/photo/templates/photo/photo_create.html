@@ -1,16 +1,40 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 {% block content %}
-<div class="row">
+<div style="background:#ccc url(../../../../../frontend/static/images/wood.jpg) repeat top left;" class="row">
     <div class="col"></div>
     <div class="col-12 col-xl-8 col-md-8">
         <div class="alert alert-primary" role="alert">
             모든 부분을 다 채워넣어주세요!!
         </div>
-        <form action="" method="post" enctype='multipart/form-data'>
+        <form action="" method="POST" class="post-form" enctype='multipart/form-data'>
             {% csrf_token %}
-
-            {{form.as_p}}
-            <input type="submit" value="Upload" class="btn btn-pirmary">
+            {{ form.non_field_errors }}
+                <div class="fieldWrapper">
+                    {{ form.subject.errors }}
+                    장소:<input type="text" name="name">
+                    {{ form.subject }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ form.message.errors }}
+                    메뉴:<input type="fulltext" name="menu" rows="10" cols="10">
+                    {{ form.message }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ form.sender.errors }}
+                    내부 사진:<input type="file" name="innerpic">
+                    {{ form.sender }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ form.cc_myself.errors }}
+                    <label for="id_cc_myself">태그 ( 총 5개 ):</label><br>
+                    {{ form.cc_myself }}
+                        <form>
+                            <input type="radio" name="tag" value="" checked> <br>
+                            <input type="radio" name="tag" value=""> <br>
+                            <input type="radio" name="tag" value=""> Other
+                        </form>
+                </div>
+                <p><input type="submit" value="Upload" class="btn btn-pirmary"style="border:1px solid black;"></p>
         </form>
     </div>
     <div class="col"></div>
