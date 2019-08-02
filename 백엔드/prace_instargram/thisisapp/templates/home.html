@@ -1,0 +1,8 @@
+<h1>연습용 홈</h1>
+
+<a href="/new">글작성하기</a>
+{% for blog in blogs %}
+    <h1>{{blog.title}}</h1>
+    <p>{{blog.summary}}</p>
+    <a href="{% url 'detail' blog.id%}">자세히</a>
+{% endfor %}
