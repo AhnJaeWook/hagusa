@@ -13,7 +13,7 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
-
+    
 #이 친구는 주소값을 쉽게해주는거 comment.blog로
     def get_absoulute_url(self):
         return reverse('detail', args=[self.pk])
@@ -28,7 +28,7 @@ class Comment(models.Model):
     comment_text = models.TextField()
     
     class Meta:
-        ordering = ['-id'] #id역순으로 정렬이에용
+        ordering = ['-comment_date'] #id역순으로 정렬이에용
 
     def get_edit_url(self):
         return reverse('comment_edit', args=[self.blog.pk,  self.pk])

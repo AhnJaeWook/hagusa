@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect # redirect를 �
 from django.utils import timezone
 from .models import Blog, Comment
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User#user만드는 함수들 가져와
+from django.contrib import auth
 from .forms import CommentForm
-# Create your views here.
-
 
 def home(request):
     blogs = Blog.objects.all()
@@ -88,3 +88,7 @@ def comment_delete(request, post_pk,pk):
         comment.delete()
 
     return render(request,'comment_confirm_delete.html',{'comment':comment,})
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
