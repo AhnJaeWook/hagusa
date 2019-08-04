@@ -86,6 +86,12 @@
       <li class="nav-item">
         <a class="nav-link" href="/">게시판</a>
       </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'photo:like_list' %}">좋아요 모아보기</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'photo:favorite_list' %}">즐겨찾기 모아보기</a>
+      </li> 
       {% if user.is_authenticated %}
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'photo:create' %}">글 작성 <span class="sr-only">(current)</span></a>
@@ -101,14 +107,14 @@
         <a class="nav-link" href="{% provider_login_url 'naver' %}">네이버 로그인 <span class="sr-only">(current)</span></a>
       </li>
       {% endif %}
-      
+      <!--로그인으로 바꿔서 팝업창 띄우기-->
     </ul>
     
   </div>
 </nav>
 <div id="header">
   <div>
-      <ul class="pagination"style="margin-left:55%;">
+      <ul class="pagination"style="margin-left:52.9%;">
                 {% if page_obj.has_previous %}
                     <a href="?page={{page_obj.previous_page_number}}" class = "page-link">&laquo;</a> 
                 {% else %}

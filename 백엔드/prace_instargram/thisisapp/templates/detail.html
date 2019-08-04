@@ -1,0 +1,27 @@
+<h1>{{detail.title}}</h1>
+<p>{{detail.body}}</p>
+<a href="{% url 'home'%}">홈으로</a>
+<a href="{% url 'delete' detail.id %}">삭제하기</a>
+<a href="{% url 'edit' detail.id %}">수정하기</a>
+<a href = "{% url 'comment_new' detail.id %}">댓글쓰기</a>
+
+<ul>
+{% for comment in detail.comment_set.all %}
+ 
+    <li>
+        {{ comment.comment_text }}
+        by {{ comment.author }}
+        at {{ comment.comment_date }}
+        
+        {% if comment.author == request.user %}
+            <a href="{{ comment.get_edit_url }}">
+                댓글 수정
+            </a>
+            <a href="{{ comment.get_delete_url }}" >
+                댓글 삭제
+            </a>
+        {% endif %}
+    </li>
+ 
+{% endfor %}
+</ul>

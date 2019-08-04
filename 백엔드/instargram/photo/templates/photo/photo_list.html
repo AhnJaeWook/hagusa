@@ -31,8 +31,19 @@
             <input type="search" placeholder="Search" aria-label="Search" size ="30">
             <input type="submit"  value="" style="background-color:transparent;  border:0px transparent solid;"></button>
         </form>
+        <select id="sort-select" style="margin-left:85%;" onchange="location = this.value;">
+                <option class="sort-date" value="/">최신순</option>
+                <option class="sort-likes" value="?sort=likes">좋아요순</option>
+                {% if user.is_authenticated %}
+                <option class="sort-mypost" value="?sort=mypost">내가쓴글</option>
+                {% endif %}
+        </select>
         <div id="read_category">
             <br>
+
+            
+
+
             <div id="read_blank1"></div>
             {% for object in object_list %}
                 <div id="read_card"><center></center>
@@ -40,7 +51,12 @@
                         <img src="{{ object.image.url }}" class="card-img-top"style="width:225px;height:150px;"><br>                    
                             <div id="card_content">
                                 <h10 class="card-title">{{object.author}}</h10><br>
+                                    <h10>좋아요 :{{object.like.all.count}}</h10><br>
+                                    
                                     <a class="card-text"style="font-size:15px;">{{object.text}}</a><br>
+                                    
+                                    
+
                             </div>
                     </a>
                 </div>

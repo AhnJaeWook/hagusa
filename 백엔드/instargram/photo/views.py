@@ -11,15 +11,25 @@ from django.contrib import auth
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from urllib.parse import urlparse
 
-
+from hitcount.views import HitCountDetailView
 from .models import Photo, Blog, Comment
 # Create your views here.
+
+def view(request, no=0):
+    if no == 0: return HttpResponseRedirect('/')
+
+    board = Board.objects.filter(id=no)
+    board.update(hit=F('hit')+1)
+    data = {
+        'board':board[0]
+    }
+    return render(request, 'board/view.html', data)
 
 class PhotoList(ListView):
     model = Photo
     template_name_suffix = '_list'
     paginate_by = 9
-
+    count_hit = True
 
 class PhotoCreate(CreateView):
     model = Photo
@@ -100,6 +110,37 @@ class Photofavorite(View):
                     photo.favorite.add(user)
             return HttpResponseRedirect('/')
 
+class PhotoLikeList(ListView):
+    model = Photo
+    template_name = 'photo/photo_list.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저하세요')
+            return HttpResponseRedirect('/')
+        return super(PhotoLikeList, self).dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        user = self.request.user
+        queryset = user.like_post.all()
+        return queryset
+
+
+class PhotoFavoriteList(ListView):
+    model = Photo
+    template_name = 'photo/photo_list.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저하세요')
+            return HttpResponseRedirect('/')
+        return super(PhotoFavoriteList, self).dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        user = self.request.user
+        queryset = user.like_post.all()
+        return queryset
+
 def read(request):#blog 함수임
     return render(request, "read.html")
 
@@ -141,13 +182,15 @@ def logout(request):
     auth.logout(request)
     return redirect('/main')
 
-def comment(request, Photo_id):
-
-    if request.method == "POST":
-        comment_form = CommentForm(request.POST)
-        comment_form.instance.author_id = request.user.id
-        comment_form.instance.User_id = User_id
-        if comment_form.is_valid():
-            comment = comment_form.save()
-
-    return redirect(User)
+def index(request):
+    sort = request.GET.get('sort','')
+    if sort == 'likes':
+        memos = Memos.objects.annotate(like_count=Count('likes')).order_by('-like_count', '-update_date')
+        return render(request, 'memo_app/index.html', {'memos' : memos})
+    elif sort == 'mypost':
+        user = request.user
+        memos = Memos.objects.filter(name_id = user).order_by('-update_date') #복수를 가져올수 있음
+        return render(request, 'memo_app/index.html', {'memos' : memos})
+    else:
+        memos = Memos.objects.order_by('-update_date')
+        return render(request, 'memo_app/index.html', {'memos' : memos})
