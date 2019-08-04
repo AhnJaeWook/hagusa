@@ -1,0 +1,39 @@
+
+/* 이미지 위에 커서를 갓다대면 변하는 css*/
+
+
+
+/*css 가져온 팝업*/
+a, a:hover, a:visited{color:#fff; text-decoration:none;}
+ 
+#image1_pop{
+ width:700px; height:600px; background:#3d3d3d; color:#fff; 
+ position:absolute; top:10px; left:500px; text-align:center; 
+ border:2px solid #000;
+ }
+
+#image1_bt{
+   
+    display: inline-block;
+    width: 250px;
+    height: 220px;
+    /*border:2px solid orange;*/
+    border-radius: 12px;
+    transition : .5s ease;
+    background:transparent url(../images/aac.jpg) no-repeat;
+    margin-right:20px;
+    
+}
+
+#image1_bt:hover{
+    transition: .5s ease;
+    border:2px solid orange;
+    background:transparent url(../images/aac.jpg) no-repeat;
+    width: 300px;
+    height:300px;
+    
+}
+
+#image1_close{
+ width:100px; margin:auto; cursor:pointer; font-weight:bold;
+}

@@ -14,7 +14,8 @@ a, a:hover, a:visited{color:#fff; text-decoration:none;}
 
 #pop_bt{
     border:1px solid #000;
-    width:100px; margin:auto;
+    width:100px; 
+    margin:auto;
     margin-top:300px;
     cursor: pointer;
     font-weight:bold;

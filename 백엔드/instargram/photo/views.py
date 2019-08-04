@@ -127,6 +127,10 @@ def new1(request):
 def pr2(request):
     return render(request, "pr2.html")
     
+    
+def pr22(request):
+    return render(request, "pr22.html")
+    
 def pr3(request):
     return render(request, "pr3.html")
 

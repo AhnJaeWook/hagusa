@@ -1,30 +1,100 @@
 {% load static %}
-<h1> new page </h1>
 
 <head> 
-    <link href = "{% static 'css/menu2.css' %}" rel = "stylesheet">
+    <meta charset="UTF-8">
+    <link href = "{% static 'css/newmenu.css' %}" rel = "stylesheet">
+    <link href = "{% static 'css/newmenu3.css' %}" rel = "stylesheet">
+    <link href = "{% static 'css/newlist.css' %}" rel = "stylesheet">
+    
+    <!--js적용-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+ <script type="text/javascript">
+   $(document).ready(function() {
+    $('#image1_bt').click(function() {
+     $('#image1_pop').show();
+    });
+
+    $('#image1_close').click(function() {
+     $('#image1_pop').hide();
+    });
+   });
+ </script>
 
 </head>
 
 <body>
-<center>
-    <div id="m2">
-        <center>
-            <div id="name", style="padding:20px;"> 가게이름 메뉴판</div>
-
-                <div id = "content">
-                내용
-                <div class>
-                    <div id="image1"> test1</div>
-                    <div id="explain">게시글 쓰는란</div>
-                </div> 
-         
-
-        
-
-            </div>
-        </center>
+    <div class="nav">
+        <div class="logo">
+            <img src="../static/images/aae.jpg">
+        </div>
+        <div class="nav_but">
+            <a href="">페이지1</a>
+            <a href="">페이지2</a>
+            <a href="">페이지3</a>
+            <a href="">페이지4</a>
+        </div>
     </div>
-</center>
+    
+   <center>
+    <div id="m2">
+      <center>
+      
+      <div id = "content">
+          
+              <div class>
+                  <div id="image1_bt"> images</div>
+                  <div id='explain'>
+                        <p>게시글 쓰는란</p>
+                  </div>
+              </div> 
 
-  </body>
+              <div class>
+                <div id="image1_bt"> images</div>
+                <div id='explain'>게시글 쓰는란</div>
+            </div> 
+
+            <div class>
+                <div id="image1"> imgaes</div>
+                <div id='explain'>게시글 쓰는란</div>
+            </div> 
+
+            <div id="image1_pop" style="display:none;">
+                <div style="height:370px;">
+                안녕하세요 image
+                </div>
+            
+                <div>
+                    <div id="image1_close">close</div>
+                </div>
+        </div>
+<!--
+            <section class = "service">
+                    <div class = "text">
+                        <h1>멋사</h1>
+                        <p>dfdfd</p>
+                        <button>more..</button>
+                    </div>
+                </div>
+            </section>
+
+-->
+
+            <section class = "list_intro">
+                <div class = "container">
+                    <div class ="list_intro_left">
+                        <h2>오프라인 카페를 추천해주는 사이트입니다</h2>
+                        <h1>Hagusa X LIKELION</h1>
+                        <p>* 개발 : 안재욱 김승환 김현지 김현민</p>
+                        <p>* 문의 : 010 - xxxx - xxxx</p>
+                        
+                    </div>
+                    
+                </div>
+            </section>
+
+
+            </center>
+        </div>
+    </center>
+</body>

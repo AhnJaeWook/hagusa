@@ -38,8 +38,8 @@ background-color:rgba( 255, 255, 255, 0.5 );;
 width:1000px;
 height: 700px;
 }
-.item {
 
+.item {
 margin: 20px;
 border-radius: 4px;
 background-color: yellow;
@@ -57,7 +57,6 @@ height: 90%;
 
 }
 
-
 #explain{
 display: inline-block;
 width: 55%;
@@ -66,6 +65,7 @@ border-radius: 1px solid blue;
 background-color: white;
 
 }
+
 #image1{
     display: inline-block;
     width: 250px;
@@ -76,7 +76,6 @@ background-color: white;
 
 
 #name2 {
-        
     margin: 20px;
     border: 1px solid #cccccc;
     width:35%;

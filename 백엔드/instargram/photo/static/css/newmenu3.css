@@ -1,3 +1,5 @@
+/*기본 css*/
+
 body{
 	background:#ccc url(../images/완7.png) repeat top left;
 	font-family: Arial, Helvetica, sans-serif;
@@ -6,6 +8,7 @@ body{
 	color: #000;
 }
 
+/*상단 bar = nav*/
 .nav{
     display: flex;
     
@@ -27,17 +30,18 @@ body{
     color:black;
     background-color:orange;
 
-
 }
 
+  /* 이것이 무엇인지 모르겟어요
 #m2{
     margin:auto;
     width:1100px;
     height:800px;
-    /*position:relative;*/
+    /*position:relative;
   }
+ */
   
-/*
+/* 이거는 여기 왜잇는지 모르겟어여
 #container {
     background-color: pink;
     flex-direction: column;
@@ -49,6 +53,7 @@ body{
 }
 */
 
+/*다른곳에 필요한 css
 #name{
     border-radius: 12px;
     background:transparent url(../images/11.jpg) no-repeat;
@@ -56,6 +61,8 @@ body{
     height:20px;
 
 }
+
+*/
 
 #content {
     border: 1px solid #cccccc;
@@ -67,6 +74,7 @@ body{
     padding-bottom:10px;
 }
 
+/*얘도 필요없엉 
 .item {
 
     margin: 20px;
@@ -86,6 +94,7 @@ body{
 
 }
 
+*/
 
 #explain{
     display: inline-block;
@@ -116,6 +125,7 @@ body{
     height:300px;
 }
 
+/*
 #name2 {
         
     margin: 20px;
@@ -124,6 +134,9 @@ body{
     margin: 20px;
 }
 
+*/
+
+/*
 .service{
     background: #ddd;
 
@@ -177,3 +190,5 @@ body{
     border :2px solid black;
     color: black;
 }
+
+*/
