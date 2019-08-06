@@ -3,6 +3,9 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 # Create your models here.
+from django.utils import timezone
+from django import forms
+from django.conf import settings
 
 class Photo(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
@@ -23,11 +26,11 @@ class Photo(models.Model):
     def __str__(self):
         return "text : "+self.text
 
-    class Meta:
-        ordering = ['-created']
 
     def get_absolute_url(self):
         return reverse('photo:detail', args=[self.id])
+
+
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)
@@ -43,11 +46,17 @@ class Blog(models.Model):
     def pretty_pub_date(self):
         return self.pub_date.strftime("%y.%m.%d")
 
-
 class Comment(models.Model):
- 
-    blog = models.ForeignKey(Photo, on_delete=True, null=True)
-    comment_date = models.DateTimeField(auto_now_add=True)
-    comment_user = models.TextField(max_length=20)
+    photo = models.ForeignKey(Photo,on_delete=True, null=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=True, null=True)
+    comment_date = models.DateTimeField(default=timezone.now)
+    comment_text = models.TextField()
     
-    comment_textfield = models.TextField()
+    class Meta:
+        ordering = ['comment_date'] #id역순으로 정렬이에용
+    
+    def get_edit_url(self):
+        return reverse('comment_edit', args=[self.photo.pk,  self.pk])
+
+    def get_delete_url(self):
+        return reverse('comment_delete', args=[self.photo.pk,  self.pk])
