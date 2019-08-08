@@ -28,8 +28,30 @@
                     <br>
                     
                     <a href="{% url 'photo:favorite' object.id%}" class="">저장하기!</a>
-                    
+                    <br>
+                    <a href = "{% url 'comment_new' object.id %}">댓글쓰기</a>
                 </li>
+                
+                <ul>
+                    {% for comment in object.comment_set.all %}
+     
+                        <li>
+                            {{ comment.comment_text }}
+                            by {{ comment.author }}
+                            at {{ comment.comment_date }}
+            
+                            {% if comment.author == request.user %}
+                                <a href="{{ comment.get_edit_url }}">
+                                    댓글 수정
+                                </a>
+                                <a href="{{ comment.get_delete_url }}" >
+                                    댓글 삭제
+                                </a>
+                            {% endif %}
+                        </li>
+     
+                    {% endfor %}
+                </ul>
                 <li class="list-group-item">생성일 : {{object.created}}</li>
 
             </ul>
@@ -52,6 +74,6 @@
     <input type="submit" value="Comment" class="btn btn-outline-primary">
     
 </form>
-    
+
 
 {% endblock %}
