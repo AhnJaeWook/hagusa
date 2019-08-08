@@ -10,7 +10,7 @@ def home(request):
     blogs = Blog.objects.all()
     return render(request, 'home.html', {'blogs':blogs})
 
-def detail(request, blog_id):
+def comment_detail(request, blog_id):
     detail = get_object_or_404(Blog, pk=blog_id)
     comments = Comment.objects.filter(blog_id=blog_id)
 

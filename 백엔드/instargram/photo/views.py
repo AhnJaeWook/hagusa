@@ -11,9 +11,30 @@ from django.contrib import auth
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from urllib.parse import urlparse
 
+from django.contrib.auth.decorators import login_required
 from hitcount.views import HitCountDetailView
-from .models import Photo, Blog, Comment
+from .models import Photo, Comment
+from .forms import CommentForm
 # Create your views here.
+
+class PhotoSortLike(ListView):
+    model = Photo
+    template_name = 'photo/photo_list.html'
+
+
+    def get_queryset(self):
+        queryset = Photo.objects.all().order_by('-like')
+        return queryset
+
+class PhotoSortMine(ListView):
+    model = Photo
+    template_name = 'photo/photo_list.html'
+
+
+    def get_queryset(self):
+        user = self.request.user
+        queryset = Photo.objects.filter(author=user)
+        return queryset
 
 def view(request, no=0):
     if no == 0: return HttpResponseRedirect('/')
@@ -30,6 +51,11 @@ class PhotoList(ListView):
     template_name_suffix = '_list'
     paginate_by = 9
     count_hit = True
+    
+    def get_queryset(self):
+        user = self.request.user
+        queryset = Photo.objects.all().order_by('-created')
+        return queryset
 
 class PhotoCreate(CreateView):
     model = Photo
@@ -138,7 +164,7 @@ class PhotoFavoriteList(ListView):
 
     def get_queryset(self):
         user = self.request.user
-        queryset = user.like_post.all()
+        queryset = user.favorite_post.all()
         return queryset
 
 def read(request):#blog 함수임
@@ -185,12 +211,66 @@ def logout(request):
 def index(request):
     sort = request.GET.get('sort','')
     if sort == 'likes':
-        memos = Memos.objects.annotate(like_count=Count('likes')).order_by('-like_count', '-update_date')
-        return render(request, 'memo_app/index.html', {'memos' : memos})
+        memos = Photo.objects.annotate(like=Count('likes')).order_by('-like', '-updated')
+        return render(request, 'photo_list.html', {'memos' : memos})
     elif sort == 'mypost':
         user = request.user
-        memos = Memos.objects.filter(name_id = user).order_by('-update_date') #복수를 가져올수 있음
-        return render(request, 'memo_app/index.html', {'memos' : memos})
+        memos = Photo.objects.filter(name_id = user).order_by('-updated') #복수를 가져올수 있음
+        return render(request, 'photo_list.html', {'memos' : memos})
     else:
-        memos = Memos.objects.order_by('-update_date')
-        return render(request, 'memo_app/index.html', {'memos' : memos})
+        memos = Photo.objects.order_by('-updated')
+        return render(request, 'photo_list.html', {'memos' : memos})
+
+def comment_detail(request, photo_id):
+    comment_detail = get_object_or_404(Photo, pk=photo_id)
+    comments = Comment.objects.filter(photo_id=photo_id)
+
+    context = {
+        'comment_detail' : comment_detail,
+        'comments' : comments
+    }
+
+    return render(request, 'photo_detail.html', context)
+
+def comment_new(request, post_pk):
+    post = get_object_or_404(Photo, pk=post_pk)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.photo = post
+            comment.author = request.user
+            comment.save()  
+            return redirect('/detail/' + str(post_pk))
+    else:
+        form = CommentForm()
+    return render(request,'comment_form.html',{'form':form})
+
+def comment_edit(request, post_pk,pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    
+    if comment.author != request.user:
+        return redirect('detail',post_pk)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES,instance=comment)
+        if form.is_valid():
+            comment = form.save()
+            return redirect('photo:detail',comment.photo.pk)
+    else:
+        form = CommentForm(instance=comment)
+    return render(request,'comment_form.html',{'form':form})
+
+    
+def comment_delete(request, post_pk,pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    #작성자만 삭제가능
+    if comment.author != request.user:
+        return redirect('photo:detail',post_pk)
+
+    if request.method == 'POST':
+        comment.delete()
+        return redirect('photo:detail',post_pk)
+
+    return render(request,'comment_confirm_delete.html',{'comment':comment,})
