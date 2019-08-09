@@ -13,11 +13,6 @@ class Photo(models.Model):
     image = models.ImageField(upload_to= 'timeline_photo/%Y/%m/%d')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    
-
-    calm = models.ManyToManyField(User, related_name = 'calm_post', blank=True)
-    #study = models.ManyToManyField(User, related_name = 'study_post', blank=True)
-    #loud = models.ManyToManyField(User, related_name = 'loud_post', blank=True)
 
     like = models.ManyToManyField(User, related_name = 'like_post', blank=True)
     favorite = models.ManyToManyField(User, related_name='favorite_post', blank=True)

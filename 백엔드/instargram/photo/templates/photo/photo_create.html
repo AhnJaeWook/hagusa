@@ -1,46 +1,28 @@
-{% extends 'base1.html' %}
+{% extends 'base.html' %}
 {% block content %}
-<div style="background:#ccc url(../../../../../frontend/static/images/wood.jpg) repeat top left;" class="row">
+<div class="row">
     <div class="col"></div>
     <div class="col-12 col-xl-8 col-md-8">
         <div class="alert alert-primary" role="alert">
             모든 부분을 다 채워넣어주세요!!
         </div>
-        <form action="" method="POST" class="post-form" enctype='multipart/form-data'>
-            {% csrf_token %}
-            {{ form.non_field_errors }}
-                <div class="fieldWrapper">
-                    {{ form.subject.errors }}
-                    장소:<input type="text" name="name">
-                    {{ form.subject }}
-                </div>
-                <br>
-                <div class="fieldWrapper">
-                    {{ form.message.errors }}
-                    메뉴:<input type="fulltext" name="menu" rows="400" cols="100"style="width:200px; height:100px;">
-                    {{ form.message }}
-                </div>
-                <br>
-                <div class="fieldWrapper">
-                    {{ form.sender.errors }}
-                    내부 사진:<input type="file" name="innerpic">
-                    {{ form.sender }}
-                </div>
-                <br>
-                <div class="fieldWrapper">
-                    {{ form.cc_myself.errors }}
-                    <label for="id_cc_myself">태그 ( 총 5개 중복선택 가능 ):</label><br>
-                    {{ form.cc_myself }}
-                        <form>
-                            <input type="checkbox" name="tag" value="">1 <br>
-                            <input type="checkbox" name="tag" value="">2 <br>
-                            <input type="checkbox" name="tag" value="">3 <br>
-                            <input type="checkbox" name="tag" value="">4 <br>
-                            <input type="checkbox" name="tag" value="">5 <br>
-                            </form>
-                        </form>
-                </div>
-                <p><input type="submit" value="Upload" class="btn btn-pirmary"style="border:1px solid black;"></p>
+        <form action="" method="post" enctype='multipart/form-data'>
+            % csrf_token %}
+            {{form.as_p}}
+            <form>
+            <p>---------------------------------------------------------------------------------------------</p>
+            <p>지역을 선택해주세요</p>
+            <select name="fruit">
+                <option value="local_half" selected> 중구 
+                <option value="local_north"> 북구
+                <option value="local_west"> 서구
+                <option value="local_east"> 동구
+                <option value="local_south"> 남구
+                <option value="local_soosung"> 수성구
+                <option value="local_dalsu"> 달서구
+                </select>
+            </form>
+            <p><input type="submit" value="Upload" class="btn btn-pirmary"style="border:1px solid black;"></p>
         </form>
     </div>
     <div class="col"></div>
