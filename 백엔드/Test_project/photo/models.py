@@ -11,6 +11,12 @@ class Photo(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    like1 = models.ManyToManyField(User, related_name='like1_post', blank=True)
+    like2 = models.ManyToManyField(User, related_name='like2_post', blank=True)
+    like3 = models.ManyToManyField(User, related_name='like3_post', blank=True)
+    like4 = models.ManyToManyField(User, related_name='like4_post', blank=True)
+    like5 = models.ManyToManyField(User, related_name='like5_post', blank=True)
+
     def __str__(self):
         return "text : " + self.text
 
