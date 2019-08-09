@@ -15,6 +15,8 @@ from django.contrib.auth.decorators import login_required
 from hitcount.views import HitCountDetailView
 from .models import Photo, Comment
 from .forms import CommentForm
+from django.db.models import Count
+
 # Create your views here.
 
 class PhotoSortLike(ListView):
@@ -23,7 +25,8 @@ class PhotoSortLike(ListView):
 
 
     def get_queryset(self):
-        queryset = Photo.objects.all().order_by('-like')
+        user = self.request.user
+        queryset = Photo.objects.annotate(like_count=Count('like')).order_by('-like_count')  
         return queryset
 
 class PhotoSortMine(ListView):
@@ -274,3 +277,4 @@ def comment_delete(request, post_pk,pk):
         return redirect('photo:detail',post_pk)
 
     return render(request,'comment_confirm_delete.html',{'comment':comment,})
+
