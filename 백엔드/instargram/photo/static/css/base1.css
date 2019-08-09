@@ -1,0 +1,142 @@
+.btn-like{
+    display: inline-block;
+    width: 45px;
+    height: 40px;
+    background:url( 'images/instargram_img.png');
+    background-position: -285px -140px;
+    text-indent: -9999px;
+    overflow:hidden;
+    border:none;
+}
+.btn-like.active{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background:url('images/instargram_img.png');
+    background-position: -50px -400px;
+    text-indent: -9999px;
+    overflow:hidden;
+    border:none;
+}
+.btn-favorite{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background:url('images/instargram_img.png');
+    background-position: -290px 350px;
+    text-indent: -9999px;
+    overflow:hidden;
+    border:none;
+}
+.btn-favorite.active{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background:url('images/instargram_img.png');
+    background-position: -515px -100px;
+    text-indent: -9999px;
+    overflow:hidden;
+    border:none;
+}
+div#header1{
+    background-color:(0,0,0,0);
+    position:fixed;
+    width:100%;
+    bottom:0;
+    left:0;
+}
+ul.nav{
+    float:left;
+    list-style:none;
+    width:45%;
+}
+ul.nav li{
+    float:left;
+}
+ul.nav a{
+    line-height:40px;
+    color:#FFFFFF;
+    padding:0 15px;
+    text-decoration: none;
+}
+.pagination-outer{
+    text-align: center;
+    padding: 15px 0;
+}
+.pagination{
+    font-family: 'ABeeZee', sans-serif;
+    display: inline-flex;
+    position: relative;
+}
+.pagination li a.page-link{
+    color: #444;
+    background-color: transparent;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 42px;
+    height: 42px;
+    width: 42px;
+    padding: 0;
+    margin: 0 7px;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.pagination li.active a.page-link,
+.pagination li a.page-link:hover,
+.pagination li.active a.page-link:hover{
+    color: #6c5ce7;
+    background-color: transparent;
+    box-shadow: 0 0 20px 5px #6c5ce7;
+}
+.pagination li a.page-link:before{
+    content: "";
+    background: #6c5ce7;
+    width: 70%;
+    height: 70%;
+    opacity: 0;
+    transform: translateY(-50%) translateX(-50%) scale(0.8);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: -1;
+    -webkit-clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0, 51% 25%);
+    clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0, 51% 25%);
+    transition: all 0.3s;
+}
+.pagination li.active a.page-link:before,
+.pagination li a.page-link:hover:before{
+    top: -17px;
+    opacity: 1;
+}
+.pagination li:first-child a.page-link,
+.pagination li:last-child a.page-link{
+    color: #fff;
+    background-color: #6c5ce7;
+    border-radius: 0;
+    -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+.pagination li:last-child a.page-link{
+    -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+.pagination li:first-child a.page-link:before,
+.pagination li:last-child a.page-link:before{
+    display: none;
+}
+.pagination li:first-child a.page-link:hover,
+.pagination li:last-child a.page-link:hover{
+    background-color: #404040;
+}
+@media only screen and (max-width: 480px){
+    .pagination{
+        display: block;
+        margin: 0;
+    }
+    .pagination li{
+        margin: 10px 2px;
+        display: inline-block;
+    }
+}

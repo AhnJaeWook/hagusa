@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('allauth.urls')),
     path('',thisisapp.views.home,name='home'),
-    path('detail/<int:blog_id>/',thisisapp.views.detail, name="detail"),
+    path('detail/<int:blog_id>/',thisisapp.views.comment_detail, name="detail"),
     path('new/',thisisapp.views.new,name='new'),
     path('create/',thisisapp.views.create, name="create"),
     path('delete/<int:blog_id>/', thisisapp.views.delete, name="delete"),
