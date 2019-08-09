@@ -26,7 +26,8 @@
                     </span>
                     {% endif %}
                     <br>
-                    
+                    <a href="{% url 'photo:calm' object.id %}" class="">조용함!</a>
+                    <br>
                     <a href="{% url 'photo:favorite' object.id%}" class="">저장하기!</a>
                     <br>
                     <a href = "{% url 'comment_new' object.id %}">댓글쓰기</a>

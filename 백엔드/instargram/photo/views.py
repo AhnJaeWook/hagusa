@@ -274,3 +274,31 @@ def comment_delete(request, post_pk,pk):
         return redirect('photo:detail',post_pk)
 
     return render(request,'comment_confirm_delete.html',{'comment':comment,})
+
+
+class PhotoCalm(View):
+    def get(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return HttpResponseForbidden()
+        else:
+            if 'photo_id' in kwargs:
+                photo_id = kwargs['photo_id']
+                photo = Photo.objects.get(pk=photo_id)
+                user = request.user
+                if user in photo.like.all():
+                    photo.calm.remove(user)
+                else:
+                    photo.calm.add(user)
+            referer_url = request.META.get('HTTP_REFERER')
+            path = urlparse(referer_url).path
+            return HttpResponseRedirect('/')
+
+class PhotoCalmList(ListView):
+    model = Photo
+    template_name = 'photo/photo_list.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저하세요')
+            return HttpResponseRedirect('/')
+        return super(PhotoCalmList, self).dispatch(request, *args, **kwargs)
