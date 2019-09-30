@@ -26,7 +26,6 @@
                     </span>
                     {% endif %}
                     <br>
-                    
                     <a href="{% url 'photo:favorite' object.id%}" class="">저장하기!</a>
                     <br>
                     <a href = "{% url 'comment_new' object.id %}">댓글쓰기</a>
@@ -39,7 +38,7 @@
                             {{ comment.comment_text }}
                             by {{ comment.author }}
                             at {{ comment.comment_date }}
-            
+                            <br>
                             {% if comment.author == request.user %}
                                 <a href="{{ comment.get_edit_url }}">
                                     댓글 수정

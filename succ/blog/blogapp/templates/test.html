@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+
+<link href = "{% static 'css/style.css' %}" rel = "stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+    <!-- 왼쪽 사이드 바-->
+    <div id="sidebar" class="collapsed">    
+        
+        
+        <h2>user_name</h2>
+
+    </div>
+    
+    <!-- 왼쪽 사이드 바-->
+        
+    <!-- 오른쪽 내용-->    
+        <div id="content">
+        
+        <button title="Toggle sidebar">
+        <h2>information</h2>
+        </button>
+
+        <h3>hagusa</h3>
+
+      
+        {% for blog in blogs.all %}
+           <div class="container">
+
+                <div class="card">
+                <div class="card-body" style="height : 20rem;>
+                    <h5 class="card-title">{{blog.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
+                    <p class="card-text">{{blog.body}}</p>
+                    <a href="{% url 'detail' blog.id %}" class="card-link">...more</a>
+                    
+                </div> 
+                </div>
+
+
+          
+      
+            </div>
+        {%endfor%}
+
+    
+    
+        </div>
+    <!-- 오른쪽 내용-->
+    
+
+
+
+
+
+
+
+
+
+    <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', _ => {
+    document.getElementById('sidebar').classList.toggle('collapsed');
+})
+     </script>
+
+
+
+</body>
+

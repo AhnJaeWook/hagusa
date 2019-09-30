@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import PhotoList, PhotoDelete, PhotoDetail, PhotoUpdate, PhotoCreate, PhotoLike, Photofavorite, PhotoLikeList, PhotoFavoriteList, PhotoSortLike,PhotoSortMine
+from .views import PhotoList, PhotoDelete, PhotoDetail, PhotoUpdate, PhotoCreate, PhotoLike, Photofavorite, PhotoLikeList, PhotoFavoriteList, PhotoSortLike,PhotoSortMine   
 
 app_name = "photo"
 urlpatterns = [

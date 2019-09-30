@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <div>
+        <div></div>
+        <div>
+            {% for object in object_list %}
+            <div>
+                <div>
+                    {{ object.author }}
+                </div>
+                <img src="{{ object.image.url }}">
+                <div>
+                    <p>{{ object.text }}</p>
+                </div>
+                <ul>
+                    <li>
+                        <a href="{% url 'photo:like1' object.id %}" class="">좋아요!</a>
+                        {% if object.like1.all.count %}
+                        <span>
+                            {{object.like1.all.count}}
+                        </span>
+                        {% endif %}
+                        <a href="{% url 'photo:like2' object.id%}" class="">좋아요2!</a>
+                        {% if object.like2.all.count %}
+                        <span>
+                            {{object.like2.all.count}}
+                        </span>
+                        {% endif %}
+                        <a href="{% url 'photo:like3' object.id%}" class="">좋아요3!</a>
+                        {% if object.like3.all.count %}
+                        <span>
+                            {{object.like3.all.count}}
+                        </span>
+                        {% endif %}
+                        <a href="{% url 'photo:like4' object.id%}" class="">좋아요4!</a>
+                        {% if object.like4.all.count %}
+                        <span>
+                            {{object.like4.all.count}}
+                        </span>
+                        {% endif %}
+                        <a href="{% url 'photo:like5' object.id%}" class="">좋아요5!</a>
+                        {% if object.like5.all.count %}
+                        <span>
+                            {{object.like5.all.count}}
+                        </span>
+                        {% endif %}
+                        생성일 : {{ object.created }}
+                    </li>
+                    <li>수정일 : {{ object.updated }}</li>
+                </ul>
+                <div>
+                    <a href="{% url 'photo:detail' object.id %}">댓글달기</a>
+                    {% if user == object.author %}
+                    <a href="{% url 'photo:update' object.id %}">수정하기</a>
+                    <a href="{% url 'photo:delete' object.id %}">삭제하기</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div></div>
+    </div>
+</div>
+{% endblock %}
