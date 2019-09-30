@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>{% block title%} {% endblock %}</title>
+    </head>
+
+    <body>
+        <nav>
+            <a href="#">Dstagram</a>
+            
+            <div>
+                <ul>
+                    <li>
+                        <a herf="{% url 'photo:index' %}">Home</a>
+                    </li>
+                    <li>
+                        <a herf="{% url 'photo:create' %}">사진 올리기</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            {% if messages %}
+            <div>
+                <div></div>
+                <div>
+                    {% for message in messages %}
+                    <div alert="{{message.tag}}">{{message}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+            {% endif %}
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
