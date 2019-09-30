@@ -28,6 +28,8 @@ body{
     padding-left: 20px;
     padding-right: 20px;
     color:black;
+
+
     background-color:orange;
 
 }
@@ -120,7 +122,7 @@ body{
     transition: .5s ease;
     border:2px solid orange;
     background:transparent url(../images/aac.jpg) no-repeat;
-    color : black;
+    color : blue;
     width: 300px;
     height:300px;
 }

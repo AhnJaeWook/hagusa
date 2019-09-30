@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TinySlider - JavaScript Slideshow</title>
+
+
+<link href = "{% static 'css/style.css' %}" rel = "stylesheet">
+
+<script type="text/javascript" src="/static/js/script.js"></script>
+</head>
+
+
+<body>
+<div id="wrapper">
+	<div>
+		<div class="sliderbutton"><img src="/static/images/left.gif" width="32" height="38" alt="Previous" onclick="slideshow.move(-1)" /></div>
+		<div id="slider">
+			<ul>
+				<li id="content">
+					<h1>소개글</h1>
+					<p> 냠냠 </p>
+					<p><em>For complete details visit <a href="http://www.leigeber.com/">leigeber.com</a>.</em></p>
+				</li>
+				<li><img src="/static/images/sea-turtle.jpg" width="500" height="300" alt="Sea turtle" /></li>
+				<li><img src="/static/images/coral-reef.jpg" width="500" height="300" alt="Coral Reef" /></li>
+				<li><img src="/static/images/blue-fish.jpg" width="500" height="300" alt="Blue Fish" /></li>
+			</ul>
+		</div>
+		<div class="sliderbutton"><img src="/static/images/right.gif" width="32" height="38" alt="Next" onclick="slideshow.move(1)" /></div>
+	</div>
+	
+	<ul id="pagination" class="pagination">
+		<li onclick="slideshow.pos(0)">1</li>
+		<li onclick="slideshow.pos(1)">2</li>
+		<li onclick="slideshow.pos(2)">3</li>
+		<li onclick="slideshow.pos(3)">4</li>
+	</ul>
+</div>
+
+
+<script type="text/javascript">
+var slideshow=new TINY.slider.slide('slideshow',{
+	id:'slider',
+	auto:3,
+	resume:true,
+	vertical:false,
+	navid:'pagination',
+	activeclass:'current',
+	position:0
+});
+</script>
+
+</body>
+
+
+</html>
