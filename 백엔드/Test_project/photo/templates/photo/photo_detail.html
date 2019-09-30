@@ -48,11 +48,31 @@
                     수정일 : {{ object.updated }}
                 </li>
                 <li>생성일 : {{ object.created }}</li>
+                
             </ul>
             <div>
+                <a href = "{% url 'comment_new' object.id %}">댓글쓰기</a>
                 <a href="{% url 'photo:update' object.id %}">수정하기</a>
                 <a href="{% url 'photo:delete' object.id %}">삭제하기</a>
             </div>
+            <ul>
+                {% for comment in object.comment_set.all %}
+                    <li>
+                        {{ comment.comment_text }}
+                        by {{ comment.author }}
+                        at {{ comment.comment_date }}
+                        <br>
+                        {% if comment.author == request.user %}
+                            <a href="{{ comment.get_edit_url }}">
+                                댓글 수정
+                            </a>
+                            <a href="{{ comment.get_delete_url }}" >
+                                댓글 삭제
+                            </a>                            
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     <div></div>

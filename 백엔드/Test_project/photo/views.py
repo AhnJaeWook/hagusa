@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
@@ -8,8 +8,9 @@ from django.views.generic.base import View
 from django.http import HttpResponseForbidden
 from urllib.parse import urlparse
 
-
-from .models import Photo
+from django.contrib.auth.decorators import login_required
+from .models import Photo, Comment
+from .forms import CommentForm
 # Create your views here.
 
 class PhotoList(ListView):
@@ -147,3 +148,57 @@ class PhotoLike5(View):
             referer_url = request.META.get('HTTP_REFERER')
             path = urlparse(referer_url).path
             return HttpResponseRedirect(path)
+
+def comment_detail(request, photo_id):
+    comment_detail = get_object_or_404(Photo, pk=photo_id)
+    comments = Comment.objects.filter(photo_id=photo_id)
+
+    context = {
+        'comment_detail' : comment_detail,
+        'comments' : comments
+    }
+
+    return render(request, 'photo_detail.html', context)
+
+def comment_new(request, post_pk):
+    post = get_object_or_404(Photo, pk=post_pk)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.photo = post
+            comment.author = request.user
+            comment.save()  
+            return redirect('/detail/' + str(post_pk))
+    else:
+        form = CommentForm()
+    return render(request,'comment_form.html',{'form':form})
+
+def comment_edit(request, post_pk,pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    
+    if comment.author != request.user:
+        return redirect('detail',post_pk)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES,instance=comment)
+        if form.is_valid():
+            comment = form.save()
+            return redirect('photo:detail',comment.photo.pk)
+    else:
+        form = CommentForm(instance=comment)
+    return render(request,'comment_form.html',{'form':form})
+
+    
+def comment_delete(request, post_pk,pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    #작성자만 삭제가능
+    if comment.author != request.user:
+        return redirect('photo:detail',post_pk)
+
+    if request.method == 'POST':
+        comment.delete()
+        return redirect('photo:detail',post_pk)
+
+    return render(request,'comment_confirm_delete.html',{'comment':comment,})
