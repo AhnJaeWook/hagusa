@@ -14,10 +14,17 @@
 
 
     <!-- 왼쪽 사이드 바-->
-    <div id="sidebar" class="collapsed">    
+    <div id="sidebar" class="collapsed">    <!--타입선택자 style타입이 전부 적용됨 https://www.notion.so/Chapter9-_-e2a2afa2ee824b2ba5130b6dc664e0e6 -->
         
         
-        <h2>user_name</h2>
+        <strong><h2>user_name</h2></strong>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">공지사항 ></li>
+        <li class="list-group-item">문의 QnA ></li>
+        <li class="list-group-item">건의사항 ></li>
+        <li class="list-group-item">기본정보 ></li>
+        <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
 
     </div>
     
@@ -37,7 +44,7 @@
            <div class="container">
 
                 <div class="card">
-                <div class="card-body" style="height : 20rem;>
+                <div class="card-body" style="height : 20rem";>
                     <h5 class="card-title">{{blog.title}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
                     <p class="card-text">{{blog.body}}</p>
@@ -52,14 +59,23 @@
             </div>
         {%endfor%}
 
-    
+        <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+   
     
         </div>
+    
+        <!-- footer https://getbootstrap.com/docs/4.3/components/card/?#header-and-footer-->
+        
+
     <!-- 오른쪽 내용-->
     
-
-
-
+    
 
 
 

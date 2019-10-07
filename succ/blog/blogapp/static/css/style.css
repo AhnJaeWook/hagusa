@@ -13,7 +13,7 @@ html, body {
   
   #sidebar {
     background:blue;
-    opacity: 0.5;
+    opacity: 0.5; /*흐리게 하는 효과, 사이드 옆이 전체가 흐려짐*/
     width: 30%;
     box-shadow: 2px 0 4px rgba(0,0,0,0.5);
   }
