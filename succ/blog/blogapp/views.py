@@ -14,3 +14,6 @@ def test2(request):
 def detail(request, blog_id):
     details = get_object_or_404(Blog, pk=blog_id)
     return render(request, 'detail.html', {'details':details})
+
+def login(request):
+    return render(request, 'login.html')
