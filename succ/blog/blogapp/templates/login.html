@@ -1,31 +1,104 @@
 <!DOCTYPE html>
-{% load static %}
-    <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>로그인</title>
+    <style>
+        
+        .container{
 
-    <link href = "{% static 'css/style.css' %}" rel = "stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            display: flex;
+            flex-direction: column;   
+            /* border:1px solid black; */
+        }
+        .contents{
+            display: flex;
+            /* border:1px solid black; */
+            height: 800px;
+        }
+        .id_area, .pw_area {
+            position: relative;
+        }
+        .id_area .input_row {
+            position: relative;
+            height: 29px;
+            margin: 200px 20px 14px;
+            padding: 15px 15px 10px 15px;
+            border: solid 1px #dadada;
+            background: #fff;
+        }
+        .pw_area .input_row{
+            position: relative;
+            height: 29px;
+            margin: 50px 20px 14px;
+            padding: 15px 15px 10px 15px;
+            border: solid 1px #dadada;
+            background: #fff;
+        }
+        .input_box {
+            display: block;
+            overflow: hidden;
+        }
+        .button{
+            background-color: aqua;
+            margin-left: 35%;
+            width:300px;
+            border:none;
+            color:white;
+            padding:15px 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+        header{
+            text-align: center;
+            /* border:1px solid black; */
+        }
+        nav,aside{
+            flex-grow: 1;
+            /* border:1px solid black; */
+        }
+        main{
+            flex-grow: 2;
+            border:1px solid black;
+            
+        }
+        footer{
+            /* border:1px solid black; */
+            text-align: center;
+        }
 
-    </head>
-
-    <body>
-
-        <div style="width:100%;height:50%;background-color:gray;">
-            <h3>hagusa</h3>
+    </style>
+</head>
+    <div class="container">
+        <header> <h1>HAGUSA</h1></header>
+    <section class="contents">
+        <nav>
+        </nav>
+        <main>
+        <div class="id_area">
+            <div class="input_row" id="id_area">
+                <span class="input_box">
+                    ID : <input type="text" maxlength="30">
+                </span>
+            </div>
         </div>
-        <div>
-            <form style="position:absolute; top: 30%;left:35%;width:30%;height:40%;background-color:white;border:1px solid gray;"action = "#">
-                <br>ID:<br>
-                <input style="margin-top: 5%;margin-left:35%" type="text" name="id">
-                <br>
-                PassWord:<br>
-                <input style="margin-top: 5%;margin-left:35%" type="text" name="password">
-                <br><br>
-                <input style="margin-left:35%;padding-right:10%;" type="submit">
-            </form>
-
-
-    </body>
+        <div class="pw_area">
+            <div class="input_row" id="pw_area">
+                <span class="input_box">
+                    PW : <input type="text" maxlength="30">
+                </span>
+            </div>
+        </div>
+        <div class="button"type="button">
+            로그인
+        </div>
+        </main>
+        <aside>
+        </aside>
+    </section>
+    <footer>
+    </footer>
+</div>
 </html>
