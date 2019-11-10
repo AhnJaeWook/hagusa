@@ -24,4 +24,5 @@ urlpatterns = [
     path('test2/', blogapp.views.test2, name="test2"),
     path('blog/<int:blog_id>',blogapp.views.detail, name="detail"),
     path('login/',blogapp.views.login, name="login"),
+    path('signup/',blogapp.views.signup, name="signup"),
 ]
